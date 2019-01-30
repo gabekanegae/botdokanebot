@@ -2,3 +2,4 @@ help - Mostra a lista de comandos.
 bbc - Cursos de BBC.
 bcc - Cursos de BCC.
 filme - Remakes de filmes.
+fwd - Altas merdas.

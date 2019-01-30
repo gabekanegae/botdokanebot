@@ -87,6 +87,19 @@ def filme(bot, update): # /filme
 
     bot.send_message(chat_id=update.message.chat_id, text=s, parse_mode="Markdown")
 
+
+def fwd(bot, update): # /fwd
+    printCommandExecution(bot, update)
+    myself, text, isGroup, chatID, chatName, canRunAdmin = getMsgAttributes(bot, update)
+
+    while True:
+        messageID = rd.randint(0, 500)
+        try:
+            bot.forwardMessage(chatID, '@ofwdnovo', messageID)
+            break
+        except:
+            pass
+
 def unknown(bot, update):
     printCommandExecution(bot, update)
     myself, text, isGroup, chatID, chatName, canRunAdmin = getMsgAttributes(bot, update)
@@ -106,6 +119,7 @@ def main():
     dp.add_handler(CommandHandler('filme', filme))
     dp.add_handler(CommandHandler('bcc', bcc))
     dp.add_handler(CommandHandler('bbc', bbc))
+    dp.add_handler(CommandHandler('fwd', fwd))
 
     # Unknown command
     # dp.add_handler(MessageHandler(Filters.command, unknown))
@@ -124,7 +138,7 @@ if __name__ == "__main__":
     palavrasM = ['cu', 'pinto', 'ânus', 'pipi', 'temer', 'caralho', 'talkei']
     palavrasF = ['rola', 'vagina', 'dilma', 'jeba', 'mamata', 'puta']
 
-    MEMORY_TIMEOUT = 5*60 # 5 min
+    MEMORY_TIMEOUT = 10*60 # 10 min
     MAX_SIZE = len(bbcList) + len(bccList) + len(filmeMList)*len(palavrasM) + len(filmeFList)*len(palavrasF)
     memory = {}
 
