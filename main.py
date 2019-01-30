@@ -55,7 +55,7 @@ def bbc(bot, update): # /bbc
     tries = 0
     while ((s == "") or (s in memory and now-memory[s] < MEMORY_TIMEOUT)) and (tries < MAX_SIZE):
         tries += 1
-        s = rd.choice(bccList)
+        s = rd.choice(bbcList)
 
     if tries >= MAX_SIZE:
         print("No unique phrases to show. Showing whatever...")
