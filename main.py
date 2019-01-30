@@ -21,9 +21,7 @@ def help(bot, update): # /help
         "`/help`\n",
         "> mostra isso aqui\n",
         "\n",
-        "ai tem mais uns outros q falam mais merda tambem\n",
-        "eh isso porra o q mais vc quer",
-        "\n",
+        "tbm tem `/bcc`, `/bbc`, `/filme`, `/fwd` e mais outras merdas\n"
         ]
 
     s = "".join(h)
@@ -36,14 +34,11 @@ def bcc(bot, update): # /bcc
     now = int(time())
     s = ""
     tries = 0
-    while ((s == "") or (s in memory and now-memory[s] < MEMORY_TIMEOUT)) and (tries < MAX_SIZE):
+    while ((s == "") or (s in memory and now-memory[s] < MEMORY_TIMEOUT)) and (tries < MAX_TRIES):
         tries += 1
         s = rd.choice(bccList)
 
-    if tries >= MAX_SIZE:
-        print("No unique phrases to show. Showing whatever...")
     memory[s] = now
-
     bot.send_message(chat_id=chatID, text=s, parse_mode="Markdown")
 
 def bbc(bot, update): # /bbc
@@ -53,14 +48,11 @@ def bbc(bot, update): # /bbc
     now = int(time())
     s = ""
     tries = 0
-    while ((s == "") or (s in memory and now-memory[s] < MEMORY_TIMEOUT)) and (tries < MAX_SIZE):
+    while ((s == "") or (s in memory and now-memory[s] < MEMORY_TIMEOUT)) and (tries < MAX_TRIES):
         tries += 1
         s = rd.choice(bbcList)
 
-    if tries >= MAX_SIZE:
-        print("No unique phrases to show. Showing whatever...")
     memory[s] = now
-    
     bot.send_message(chat_id=chatID, text=s, parse_mode="Markdown")
 
 def filme(bot, update): # /filme
@@ -70,7 +62,7 @@ def filme(bot, update): # /filme
     now = int(time())
     s = ""
     tries = 0
-    while ((s == "") or (s in memory and now-memory[s] < MEMORY_TIMEOUT)) and (tries < MAX_SIZE):
+    while ((s == "") or (s in memory and now-memory[s] < MEMORY_TIMEOUT)) and (tries < MAX_TRIES):
         tries += 1
     
         rPalavras = rd.randint(0, len(palavrasM) + len(palavrasF) - 1)
@@ -81,22 +73,23 @@ def filme(bot, update): # /filme
             rPalavras -= len(palavrasM)
             s = rd.choice(filmeFList).format(word=palavrasF[rPalavras])
 
-        if tries >= MAX_SIZE:
-            print("No unique phrases to show. Showing whatever...")
     memory[s] = now
-
     bot.send_message(chat_id=update.message.chat_id, text=s, parse_mode="Markdown")
-
 
 def fwd(bot, update): # /fwd
     printCommandExecution(bot, update)
     myself, text, isGroup, chatID, chatName, canRunAdmin = getMsgAttributes(bot, update)
 
+    print(memory)
+    now = int(time())
     while True:
-        messageID = rd.randint(0, 500)
+        messageID = rd.randint(0, MAX_FWD_ID)
         try:
-            bot.forwardMessage(chatID, '@ofwdnovo', messageID)
-            break
+            s = "fwd#" + str(messageID)
+            if s not in memory or now-memory[s] >= MEMORY_TIMEOUT:
+                bot.forwardMessage(chatID, '@ofwdnovo', messageID)
+                memory[s] = now
+                break
         except:
             pass
 
@@ -138,8 +131,10 @@ if __name__ == "__main__":
     palavrasM = ['cu', 'pinto', 'ânus', 'pipi', 'temer', 'caralho', 'talkei']
     palavrasF = ['rola', 'vagina', 'dilma', 'jeba', 'mamata', 'puta']
 
-    MEMORY_TIMEOUT = 10*60 # 10 min
-    MAX_SIZE = len(bbcList) + len(bccList) + len(filmeMList)*len(palavrasM) + len(filmeFList)*len(palavrasF)
+    MEMORY_TIMEOUT = 5*60 # doesnt repeat messages shown within last X seconds
+    MAX_FWD_ID = 500 # fwd channel has less than X messages
+    MAX_TRIES = 500 # will try showing unique msg X times before giving up
+    
     memory = {}
 
     main()
