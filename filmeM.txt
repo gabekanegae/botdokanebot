@@ -1,139 +1,139 @@
-Senhor Dos Anéis: a Sociedade do {word}
-Entrando Num {word}
-O Espetacular {word} Aranha
-Entrando Num {word} Maior Ainda
-{word} Valente
-Diário de um {word}
-Onze Homens e um {word}
-Doze Homens e Outro {word}
-Querida, Encolhi o {word}!
-Abc do {word}
-Um {word} Quase Perfeito
-De Volta Para o {word}
-Doctor {word}
-Mib: {word}s de Preto
-Breaking {word}
-A Fantástica Fábrica de {word}
-Harry Potter e o {word} Filosofal
-Harry Potter e o {word} Secreto
-Harry Potter e o {word} de Askaban
-Harry Potter e o {word} de Fogo
-Harry Potter e o {word} da Fenix
-O Guia do {word} Das Galáxias
-Homem {word}: de Volta Ao Lar
-Três Anúncios Para um {word}
-Sociedade Dos {word}s Mortos
-Destino de um {word}
-Stardust: o {word} da Estrela
-{word} Impossível 3
-O Poderoso {word}
-à Procura de um {word}
-Indiana Jones e o {word} da Aliança
-Hora do {word} 3
-Eu, o {word} e as Crianças
-Indiana Jones e o {word} da Perdição
-De Volta Para o {word}
-{word}s Vorazes
-Velozes e Furiosos Desafio Em {word}
-007: Contra o {word} da Morte
-Como Perder um {word} Em Dez Dias
-Quatro Amigas e um {word} Viajante
-Meu Nome Não é {word}
-{word} Com Lobos
-O {word} de 40 Anos
-De Repente {word}
-Se Eu Fosse {word}
-Dois {word}s de Francisco
-Procurando {word}
-Lula: o {word} do Brasil
-Me Chame Pelo Seu {word} e Te Chamarei Pelo Meu
-Lula: o Filho do {word}
-{word} de Cristal
-E o {word} Levou
-Esqueceram do {word}
-Lady {word}
-O Cavaleiro Didi e a Princesa {word}
-A Lenda do {word} Perdido
-O {word} é a Cor Mais Quente
-Eliana e o {word} Dos Golfinhos
-{word} Negro
-Branca de Neve e os Sete {word}s
-Piratas do Caribe: Navegando Em {word}s Misteriosos
-Fala {word}, Mãe!
-O {word} de Wall Street
-Mestre Dos Mares: o {word} Mais Distante do Mundo
-American {word}: a Primeira Vez é Inesquecível
-Percy Jackson: o Ladrão de {word}s
-Volta Ao Mundo Em 80 {word}s
-Entrando Num {word} Maior Ainda Com a Família!
-Vingadores: a Era de {word}
-Sweeney Todd: o {word} Demoníaco da Rua Fleet
-A Descoberta do {word}
-O {word} Que Sabia Demais
-Edward Mãos de {word}
-O Estranho Mundo de {word}
-Meu {word} Favorito
-Uma Odisséia No {word}
-2001: um {word} No Espaço
-Todo {word} Em Pânico
-Jogos, Trapaças e Dois {word}s Fumegantes
-O Sétimo {word}
-Planeta Dos {word}s
-Diamantes de {word}
-O Código do {word}
-Viva : a Vida é um {word}
-Monty Python e o Santo {word}
-Sete Anos No {word}
-{word} Paranormal
-Viagem Ao Centro do {word}
-{word} Sobre Rodas
-Por um Punhado de {word}
-O Hobbit: a Batalha Dos 5 {word}s
-Quando Você Viu Seu {word} Pela Ultima Vez?
-Assassinato No Expresso do {word}
-O Massacre do {word} Elétrico
-It: o {word}
-Um é Pouco, {word} é Bom, Três é Demais
-Um {word} Brilhante
-O Diabo Veste {word}
-Senhor Dos Anéis: a Sociedade do {word}
-O Brilho Eterno de um {word} Sem Lembranças
-Meu {word} é Uma Peça
-O Doador de {word}s
-Clube do {word}
-Senhor Dos Anéis: o Retorno do {word}
-O Sexto {word}
-Senhor Dos Anéis: os Dois {word}s
-Um {word} No Museu
-Star Wars: o {word} Contra Ataca
-Um {word} Que Cai
-O Estranho {word} de Jack
-As Crônicas de {word}
-O {word} Pede Carona
-O {word} Que Habito
-O Curioso {word} de Benjamin Button
-Star Wars: a Ameaça do {word}
-Star Wars: o Ataque Dos {word}s
-Star Wars: a Vingança Dos {word}s
-Um Novo {word}
-Star Wars: o {word} Contra Ataca
-Star Wars: o Retorno do {word}
-Star Wars: o Despertar do {word}
-Star Wars: os últimos {word}s
-Forrest Gump: o Contador de {word}s
-Crônicas de Nárnia: o {word}, a Feiticeira e o Guarda Roupa
-A Lista de {word}
-A Revolução do {word}
-{word}s Modernos
-O {word} de Schindler
-Mil Novecentos e Oitenta e {word}
-O Homem do {word} Alto
-Mogli o Menino {word}
-O Pequeno {word}
-Mad Max: a Estrada do {word}
-{word} Fury
-A Pantera Cor de {word}
-A Pantera {word} de Rosa
-Sítio do {word} Amarelo
-Alice No {word} Das Maravilhas
-Sonhos de um {word} de Verão
+007: contra o {word} da morte
+2001: um {word} no espaço
+a descoberta do {word}
+a fantástica fábrica de {word}
+a lenda do {word} perdido
+a lista de {word}
+a pantera cor de {word}
+a pantera {word} de rosa
+a revolução do {word}
+abc do {word}
+alice no {word} das maravilhas
+american {word}: a primeira vez é inesquecível
+as crônicas de {word}
+assassinato no expresso do {word}
+branca de neve e os sete {word}s
+breaking {word}
+clube do {word}
+como perder um {word} em dez dias
+crônicas de nárnia: o {word}, a feiticeira e o guarda roupa
+de repente {word}
+de volta para o {word}
+destino de um {word}
+diamantes de {word}
+diário de um {word}
+doctor {word}
+dois {word}s de francisco
+doze homens e outro {word}
+e o {word} levou
+edward mãos de {word}
+eliana e o {word} dos golfinhos
+entrando num {word}
+entrando num {word} maior ainda
+entrando num {word} maior ainda com a família!
+esqueceram do {word}
+eu, o {word} e as crianças
+fala {word}, mãe!
+forrest gump: o contador de {word}s
+harry potter e o {word} filosofal
+harry potter e o {word} secreto
+harry potter e o {word} da fenix
+harry potter e o {word} de askaban
+harry potter e o {word} de fogo
+homem {word}: de volta ao lar
+hora do {word} 3
+indiana jones e o {word} da aliança
+indiana jones e o {word} da perdição
+it: o {word}
+jogos, trapaças e dois {word}s fumegantes
+lady {word}
+lula: o filho do {word}
+lula: o {word} do brasil
+mad max: a estrada do {word}
+me chame pelo seu {word} e te chamarei pelo meu
+mestre dos mares: o {word} mais distante do mundo
+meu nome não é {word}
+meu {word} favorito
+meu {word} é uma peça
+mib: {word}s de preto
+mil novecentos e oitenta e {word}
+mogli o menino {word}
+monty python e o santo {word}
+o brilho eterno de um {word} sem lembranças
+o cavaleiro didi e a princesa {word}
+o curioso {word} de benjamin button
+o código do {word}
+o diabo veste {word}
+o doador de {word}s
+o espetacular {word} aranha
+o estranho mundo de {word}
+o estranho {word} de jack
+o guia do {word} das galáxias
+o hobbit: a batalha dos 5 {word}s
+o homem do {word} alto
+o massacre do {word} elétrico
+o pequeno {word}
+o poderoso {word}
+o sexto {word}
+o sétimo {word}
+o {word} pede carona
+o {word} que habito
+o {word} que sabia demais
+o {word} de 40 anos
+o {word} de schindler
+o {word} de wall street
+o {word} é a cor mais quente
+onze homens e um {word}
+percy jackson: o ladrão de {word}s
+piratas do caribe: navegando em {word}s misteriosos
+planeta dos {word}s
+por um punhado de {word}
+procurando {word}
+quando você viu seu {word} pela ultima vez?
+quatro amigas e um {word} viajante
+querida, encolhi o {word}!
+se eu fosse {word}
+senhor dos anéis: a sociedade do {word}
+senhor dos anéis: a sociedade do {word}
+senhor dos anéis: o retorno do {word}
+senhor dos anéis: os dois {word}s
+sete anos no {word}
+sociedade dos {word}s mortos
+sonhos de um {word} de verão
+star wars: a ameaça do {word}
+star wars: a vingança dos {word}s
+star wars: o ataque dos {word}s
+star wars: o despertar do {word}
+star wars: o retorno do {word}
+star wars: o {word} contra ataca
+star wars: o {word} contra ataca
+star wars: os últimos {word}s
+stardust: o {word} da estrela
+sweeney todd: o {word} demoníaco da rua fleet
+sítio do {word} amarelo
+todo {word} em pânico
+três anúncios para um {word}
+um novo {word}
+um {word} brilhante
+um {word} no museu
+um {word} quase perfeito
+um {word} que cai
+um é pouco, {word} é bom, três é demais
+uma odisséia no {word}
+velozes e furiosos: desafio em {word}
+viagem ao centro do {word}
+vingadores: a era de {word}
+vingadores: {word} infinito
+viva: a vida é um {word}
+volta ao mundo em 80 {word}s
+{word} com lobos
+{word} fury
+{word} impossível 3
+{word} negro
+{word} paranormal
+{word} sobre rodas
+{word} valente
+{word} de cristal
+{word}s modernos
+{word}s vorazes
+à procura de um {word}
