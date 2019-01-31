@@ -1,8 +1,14 @@
 007: contra a {word} da morte
+101 {word}s
+20 mil {word}s submarinas
 2001: uma {word} no espaço
+50 {word}s mais escuras
+a culpa é das {word}s
 a curiosa {word} de benjamin button
 a descoberta da {word}
+a era da {word}
 a espetacular {word} aranha
+a estranha {word} de benjamin button
 a estranha {word} de jack
 a fantástica fábrica de {word}
 a lenda da {word} perdida
@@ -11,36 +17,69 @@ a pantera cor de {word}
 a pantera {word} de rosa
 a pequena {word}
 a poderosa {word}
+a princesa {word} e os trapalhões
 a revolução da {word}
 a sexta {word}
 a sétima {word}
+a teoria da {word}
+a {word} da compadecida
+a {word} da ópera
+a {word} das armas
+a {word} de 40 anos
+a {word} de chihiro
+a {word} de schindler
+a {word} de vidro
+a {word} de wall street
+a {word} do futuro
+a {word} dos outros
+a {word} dos poetas mortos
+a {word} e a fera
+a {word} invisível
+a {word} leão
 a {word} pede carona
+a {word} polar
+a {word} que cai
 a {word} que habito
 a {word} que sabia demais
-a {word} de 40 anos
-a {word} de schindler
-a {word} de wall street
 abc da {word}
+alice através da {word}
 alice na {word} das maravilhas
+alice no mundo da {word}
+alien vs {word}
+alien, a oitava {word}
+american pie: a primeira {word} é inesquecível
+american {word} story
 american {word}: a primeira vez é inesquecível
+anthony bourdain: sem {word}s
+apertem os cintos, a {word} sumiu
 as crônicas de {word}
+as duas faces de uma {word}
 assassinato no expresso da {word}
+barbie e o castelo de {word}
+batman: a {word} das trevas
+batman: o cavaleiro das {word}s
 branca de neve e as sete {word}s
 breaking {word}
+cidade de {word}
 clube da {word}
 como perder uma {word} em dez dias
+como treinar a sua {word}
+corra que a {word} vem ai
 crônicas de nárnia: a {word}, a feiticeira e o guarda roupa
+curtindo a {word} adoidado
 de repente {word}
 de volta para a {word}
 destino de uma {word}
-diamantes de {word}
+diamante de {word}
 diário de uma {word}
 doctor {word}
 doze homens e outra {word}
 duas {word}s de francisco
+duro de {word}
 e a {word} levou
 edward mãos de {word}
 eliana e a {word} dos golfinhos
+em busca da {word} encantada
 entrando numa {word}
 entrando numa {word} maior ainda
 entrando numa {word} maior ainda com a família!
@@ -48,92 +87,178 @@ esqueceram da {word}
 eu, a {word} e as crianças
 fala {word}, mãe!
 forrest gump: o contador de {word}s
-harry potter e a {word} filosofal
-harry potter e a {word} secreta
+frozen: uma {word} congelada
 harry potter e a {word} da fenix
 harry potter e a {word} de askaban
 harry potter e a {word} de fogo
+harry potter e a {word} filosofal
+harry potter e a {word} secreta
+herbie: minha {word} turbinada
 homem {word}: de volta ao lar
+homem-aranha no {word}verso
+homem-formiga e a {word}
 hora da {word} 3
+how i met your {word}
 indiana jones e a {word} da aliança
 indiana jones e a {word} da perdição
+it's always {word} in philadelphia
 it: a {word}
 jogos, trapaças e duas {word}s fumegantes
+jurassic world: {word} ameaçada
+kimi no na {word}
+la casa de {word}
 lady {word}
+loverboy: {word} de programa
 lula: a {word} do brasil
 lula: o filho da {word}
 mad max: a estrada da {word}
+maze runner: a {word} mortal
 me chame pela sua {word} e te chamarei pela minha
 mestre dos mares: a {word} mais distante do mundo
 meu nome não é {word}
+meu {word} é uma sereia
 mib: {word}s de preto
 mil novecentos e oitenta e {word}
+minha mãe é uma {word}
+minha primeira {word}
+minha vizinha {word}
 minha {word} favorita
 minha {word} é uma peça
+moana: uma {word} de aventuras
 mogli o menino {word}
 monty python e a santa {word}
+monty python e a vida de {word}
+monty python e a {word} sagrada
+monty python e o segredo da {word}
+mudança de {word}: confusões no convento
+nasce uma {word}
 o brilho eterno de uma {word} sem lembranças
 o cavaleiro didi e a princesa {word}
 o código da {word}
 o diabo veste {word}
 o doador de {word}s
 o estranho mundo de {word}
+o exterminador do {word}
+o fabuloso destino de {word}
 o guia da {word} das galáxias
 o hobbit: a batalha das 5 {word}s
 o homem da {word} alta
+o lobo de {word}
 o massacre da {word} elétrica
-o {word} é a cor mais quente
+o menino da {word} listrada
+o menino que queria ser {word}
+o mistério da {word} na parede
+o núcleo da {word}
+o planeta das {word}s
+o segredo de uma {word}
+once upon a {word}
+onde a {word} não tem vez
+one {word} man
 onze homens e uma {word}
+onze {word}s e um segredo
+os caçadores da {word} perdida
+para todas as {word}s que já amei
+percy jackson e a {word} de monstros
 percy jackson: o ladrão de {word}s
+piratas da {word} de silício
 piratas do caribe: navegando em {word}s misteriosas
 planeta das {word}s
 por um punhado de {word}
 procurando {word}
 quando você viu sua {word} pela ultima vez?
 quatro amigas e uma {word} viajante
+quem vai ficar com a {word}
 querida, encolhi a {word}!
+robin hood: o príncipe das {word}s
+robocop: a {word} do futuro
+réquiem para uma {word}
+scott pilgrim contra a {word}
 se eu fosse {word}
-senhor dos anéis: a sociedade da {word}
+se minha {word} falasse
 senhor dos anéis: a sociedade da {word}
 senhor dos anéis: as duas {word}s
 senhor dos anéis: o retorno da {word}
 sete anos na {word}
-sociedade das {word}s mortos
+sociedade das {word}s mortas
 sonhos de uma {word} de verão
 star wars: a ameaça da {word}
 star wars: a vingança das {word}s
-star wars: a {word} contra ataca
+star wars: a {word} contra-ataca
 star wars: as últimas {word}s
 star wars: o ataque das {word}s
 star wars: o despertar da {word}
 star wars: o retorno da {word}
-star wars: o {word} contra ataca
+star wars: uma nova {word}
 stardust: a {word} da estrela
+super xuxa conta {word} astral
 sweeney todd: a {word} demoníaca da rua fleet
 sítio da {word} amarela
 toda {word} em pânico
+todo mundo odeia a {word}
+top gun: {word}s indomáveis
+trocando as {word}s
 três anúncios para uma {word}
+turma da mônica: {word}s
+turma da {word}: laços
 um é pouco, {word} é bom, três é demais
 uma nova {word}
 uma odisseia na {word}
 uma {word} brilhante
+uma {word} da pesada
+uma {word} indomável
+uma {word} muito louco
 uma {word} no museu
+uma {word} no ninho
+uma {word} para roger rabbit
 uma {word} quase perfeito
 uma {word} que cai
+uma {word} silenciosa
+up: altas {word}s
 velozes e furiosos: desafio em {word}
 viagem ao centro da {word}
 vingadores: a era de {word}
 vingadores: {word} infinita
 viva: a vida é uma {word}
 volta ao mundo em 80 {word}s
+whose {word} is it anyway
+wifi ralph: quebranda o {word}
+xuxa e as {word}s
+xuxa só para {word}s
+{word} abaixo de zero
+{word} adormecida
+{word} através do espelho
+{word} aventureira
 {word} com lobos
+{word} da vinci
+{word} de cristal
+{word} de fogo
+{word} de matar
+{word} de mentirinha
+{word} de mestre
+{word} de vingança
+{word} e preconceito
+{word} em apuros
+{word} estranha
+{word} extraordinária
 {word} fury
 {word} impossível 3
+{word} mia: here we go again
 {word} negro
+{word} no país das maravilhas
+{word} of tomorrow
 {word} paranormal
+{word} poppins
+{word} pra sempre
 {word} sobre rodas
 {word} valente
-{word} de cristal
+{word} vs superman
+{word} wars
+{word} é a cor mais quente
+{word}: altas aventuras
+{word}s do caribe
+{word}s fantásticas e onde habitam
 {word}s modernas
 {word}s vorazes
+à espera de uma {word}
 à procura de uma {word}
+à prova de {word}

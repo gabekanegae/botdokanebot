@@ -80,13 +80,14 @@ def fwd(bot, update): # /fwd
     printCommandExecution(bot, update)
     myself, text, isGroup, chatID, chatName, canRunAdmin = getMsgAttributes(bot, update)
 
-    print(memory)
     now = int(time())
+    tries = 0
     while True:
         messageID = rd.randint(0, MAX_FWD_ID)
         try:
+            tries += 1
             s = "fwd#" + str(messageID)
-            if s not in memory or now-memory[s] >= MEMORY_TIMEOUT:
+            if s not in memory or now-memory[s] >= MEMORY_TIMEOUT or tries >= MAX_TRIES:
                 bot.forwardMessage(chatID, '@ofwdnovo', messageID)
                 memory[s] = now
                 break
