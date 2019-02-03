@@ -1,5 +1,6 @@
 from telegram.ext import Updater, CommandHandler, MessageHandler, Filters
 import logging
+import requests
 import random as rd
 from time import time
 
@@ -94,6 +95,35 @@ def fwd(bot, update): # /fwd
         except:
             pass
 
+def joegs(bot, update, args): # /joegs
+    printCommandExecution(bot, update)
+    myself, text, isGroup, chatID, chatName, canRunAdmin = getMsgAttributes(bot, update)
+
+    origMsg = update.message.reply_to_message
+
+    queryText = None
+    if len(args) != 0:
+        queryText = " ".join(args)
+    elif origMsg and origMsg.text:
+        queryText = origMsg.text
+    else:
+        s = "manda alguma coisa porra"
+
+    if queryText:
+        body = {"text": queryText, "model": "pos"}
+
+        try:
+            r = requests.post(url=JOEGS_URL, data=body).json()
+
+            if r["result"] == "REAL":
+                s = "hmmm acho q eh vdd"
+            else:
+                s = "sei nao hein, se pa eh fake"
+        except:
+            s = "caraio o joegs fudeu o role, alguem chama ele"
+
+    bot.send_message(chat_id=update.message.chat_id, text=s, parse_mode="Markdown")
+
 def unknown(bot, update):
     printCommandExecution(bot, update)
     myself, text, isGroup, chatID, chatName, canRunAdmin = getMsgAttributes(bot, update)
@@ -114,6 +144,7 @@ def main():
     dp.add_handler(CommandHandler('bcc', bcc))
     dp.add_handler(CommandHandler('bbc', bbc))
     dp.add_handler(CommandHandler('fwd', fwd))
+    dp.add_handler(CommandHandler('joegs', joegs, pass_args=True))
 
     # Unknown command
     # dp.add_handler(MessageHandler(Filters.command, unknown))
@@ -124,13 +155,15 @@ def main():
     updater.idle()
 
 if __name__ == "__main__":
+    JOEGS_URL = "http://nilc-fakenews.herokuapp.com/ajax/check/"
+
     bbcList = loadFile("bbc.txt")
     bccList = loadFile("bcc.txt")
 
     filmeMList = loadFile("filmeM.txt")
     filmeFList = loadFile("filmeF.txt")
-    palavrasM = ['cu', 'pinto', 'ânus', 'pipi', 'temer', 'caralho', 'talkei']
-    palavrasF = ['rola', 'vagina', 'dilma', 'jeba', 'mamata', 'puta']
+    palavrasM = ['cu', 'pinto', 'ânus', 'pipi', 'temer', 'caralho', 'talkei', 'furico']
+    palavrasF = ['rola', 'vagina', 'dilma', 'jeba', 'mamata', 'puta', 'champola']
 
     MEMORY_TIMEOUT = 5*60 # doesnt repeat messages shown within last X seconds
     MAX_FWD_ID = 500 # fwd channel has less than X messages

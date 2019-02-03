@@ -3,3 +3,4 @@ bbc - Cursos de BBC.
 bcc - Cursos de BCC.
 filme - Remakes de filmes.
 fwd - Altas merdas.
+joegs - Diz se é verdade ou não é.
