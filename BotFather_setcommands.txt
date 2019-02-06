@@ -6,3 +6,4 @@ fwd - Altas merdas.
 joegs -É verdade ou não é?
 comtompero - Com tompero.
 semtompero - Sem tompero.
+itimalia - Ai modeuzu.

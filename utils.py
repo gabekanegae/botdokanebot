@@ -28,8 +28,15 @@ def loadFile(filename):
 
     return content
 
-def getRandomImageSubreddit(reddit, subreddit, l=100):
+def getRandomImageSubreddit(reddit, subreddit, l=50):
     sub = reddit.subreddit(subreddit)
+    posts = [post for post in sub.hot(limit=l)]
+
+    randomPost = rd.choice(posts)
+    return randomPost.title, randomPost.url
+
+def getRandomImageMultireddit(reddit, user, multireddit, l=50):
+    sub = reddit.multireddit(user, multireddit)
     posts = [post for post in sub.hot(limit=l)]
 
     randomPost = rd.choice(posts)

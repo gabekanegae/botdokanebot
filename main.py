@@ -7,14 +7,14 @@ from time import time
 import auth # Telegram Bot Token
 from utils import *
 
-def start(bot, update): # /start
+def start(bot, update):
     printCommandExecution(bot, update)
     myself, text, isGroup, chatID, chatName, canRunAdmin = getMsgAttributes(bot, update)
 
     s = "ta rodando ja ue"
     bot.send_message(chat_id=chatID, text=s, parse_mode="Markdown")
 
-def help(bot, update): # /help
+def help(bot, update):
     printCommandExecution(bot, update)
     myself, text, isGroup, chatID, chatName, canRunAdmin = getMsgAttributes(bot, update)
 
@@ -42,7 +42,7 @@ def bcc(bot, update): # /bcc
     memory[s] = now
     bot.send_message(chat_id=chatID, text=s, parse_mode="Markdown")
 
-def bbc(bot, update): # /bbc
+def bbc(bot, update):
     printCommandExecution(bot, update)
     myself, text, isGroup, chatID, chatName, canRunAdmin = getMsgAttributes(bot, update)
 
@@ -56,7 +56,7 @@ def bbc(bot, update): # /bbc
     memory[s] = now
     bot.send_message(chat_id=chatID, text=s, parse_mode="Markdown")
 
-def filme(bot, update): # /filme
+def filme(bot, update):
     printCommandExecution(bot, update)
     myself, text, isGroup, chatID, chatName, canRunAdmin = getMsgAttributes(bot, update)
 
@@ -77,7 +77,7 @@ def filme(bot, update): # /filme
     memory[s] = now
     bot.send_message(chat_id=chatID, text=s, parse_mode="Markdown")
 
-def fwd(bot, update): # /fwd
+def fwd(bot, update):
     printCommandExecution(bot, update)
     myself, text, isGroup, chatID, chatName, canRunAdmin = getMsgAttributes(bot, update)
 
@@ -95,7 +95,7 @@ def fwd(bot, update): # /fwd
         except:
             pass
 
-def joegs(bot, update, args): # /joegs
+def joegs(bot, update, args):
     printCommandExecution(bot, update)
     myself, text, isGroup, chatID, chatName, canRunAdmin = getMsgAttributes(bot, update)
 
@@ -124,30 +124,37 @@ def joegs(bot, update, args): # /joegs
 
     bot.send_message(chat_id=chatID, text=s, parse_mode="Markdown")
 
-def foodporn(bot, update): # /foodporn
+def foodporn(bot, update):
     printCommandExecution(bot, update)
     myself, text, isGroup, chatID, chatName, canRunAdmin = getMsgAttributes(bot, update)
 
     try:
         imgDesc, imgUrl = getRandomImageSubreddit(reddit, "shittyfoodporn")
-        assert(imgDesc.endswith(".jpg") or imgDesc.endswith(".png"))
-
         bot.send_photo(chat_id=chatID, photo=imgUrl, caption=imgDesc)
     except:
         s = "carai capotei o corsa, pera ai"
         bot.send_message(chat_id=chatID, text=s, parse_mode="Markdown")
 
-def shittyfoodporn(bot, update): # /shittyfoodporn
+def shittyfoodporn(bot, update):
     printCommandExecution(bot, update)
     myself, text, isGroup, chatID, chatName, canRunAdmin = getMsgAttributes(bot, update)
 
     try:
         imgDesc, imgUrl = getRandomImageSubreddit(reddit, "foodporn")
-        assert(imgDesc.endswith(".jpg") or imgDesc.endswith(".png"))
-
         bot.send_photo(chat_id=chatID, photo=imgUrl, caption=imgDesc)
     except:
         s = "carai capotei o corsa, pera ai"
+        bot.send_message(chat_id=chatID, text=s, parse_mode="Markdown")
+
+def superaww(bot, update):
+    printCommandExecution(bot, update)
+    myself, text, isGroup, chatID, chatName, canRunAdmin = getMsgAttributes(bot, update)
+
+    try:
+        imgDesc, imgUrl = getRandomImageMultireddit(reddit, "316nuts", "superaww")
+        bot.send_photo(chat_id=chatID, photo=imgUrl, caption=imgDesc)
+    except:
+        s = "morri de fofura calma"
         bot.send_message(chat_id=chatID, text=s, parse_mode="Markdown")
 
 def unknown(bot, update):
@@ -173,6 +180,7 @@ def main():
     dp.add_handler(CommandHandler('joegs', joegs, pass_args=True))
     dp.add_handler(CommandHandler('semtompero', foodporn))
     dp.add_handler(CommandHandler('comtompero', shittyfoodporn))
+    dp.add_handler(CommandHandler('itimalia', superaww))
 
     # Unknown command
     # dp.add_handler(MessageHandler(Filters.command, unknown))
