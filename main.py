@@ -1,6 +1,6 @@
 from telegram.ext import Updater, CommandHandler, MessageHandler, Filters
 import logging
-import requests
+import requests, praw
 import random as rd
 from time import time
 
@@ -75,7 +75,7 @@ def filme(bot, update): # /filme
             s = rd.choice(filmeFList).format(word=palavrasF[rPalavras])
 
     memory[s] = now
-    bot.send_message(chat_id=update.message.chat_id, text=s, parse_mode="Markdown")
+    bot.send_message(chat_id=chatID, text=s, parse_mode="Markdown")
 
 def fwd(bot, update): # /fwd
     printCommandExecution(bot, update)
@@ -122,7 +122,33 @@ def joegs(bot, update, args): # /joegs
         except:
             s = "caraio o joegs fudeu o role, alguem chama ele"
 
-    bot.send_message(chat_id=update.message.chat_id, text=s, parse_mode="Markdown")
+    bot.send_message(chat_id=chatID, text=s, parse_mode="Markdown")
+
+def foodporn(bot, update): # /foodporn
+    printCommandExecution(bot, update)
+    myself, text, isGroup, chatID, chatName, canRunAdmin = getMsgAttributes(bot, update)
+
+    try:
+        imgDesc, imgUrl = getRandomImageSubreddit(reddit, "shittyfoodporn")
+        assert(imgDesc.endswith(".jpg") or imgDesc.endswith(".png"))
+
+        bot.send_photo(chat_id=chatID, photo=imgUrl, caption=imgDesc)
+    except:
+        s = "carai capotei o corsa, pera ai"
+        bot.send_message(chat_id=chatID, text=s, parse_mode="Markdown")
+
+def shittyfoodporn(bot, update): # /shittyfoodporn
+    printCommandExecution(bot, update)
+    myself, text, isGroup, chatID, chatName, canRunAdmin = getMsgAttributes(bot, update)
+
+    try:
+        imgDesc, imgUrl = getRandomImageSubreddit(reddit, "foodporn")
+        assert(imgDesc.endswith(".jpg") or imgDesc.endswith(".png"))
+
+        bot.send_photo(chat_id=chatID, photo=imgUrl, caption=imgDesc)
+    except:
+        s = "carai capotei o corsa, pera ai"
+        bot.send_message(chat_id=chatID, text=s, parse_mode="Markdown")
 
 def unknown(bot, update):
     printCommandExecution(bot, update)
@@ -134,7 +160,7 @@ def unknown(bot, update):
 def main():
     logging.basicConfig(format='%(asctime)s - %(name)s - %(levelname)s - %(message)s', level=logging.INFO)
     logger = logging.getLogger(__name__)
-    updater = Updater(token=auth.TOKEN)
+    updater = Updater(token=auth.PROD_TOKEN)
     dp = updater.dispatcher
 
     # Commands
@@ -145,6 +171,8 @@ def main():
     dp.add_handler(CommandHandler('bbc', bbc))
     dp.add_handler(CommandHandler('fwd', fwd))
     dp.add_handler(CommandHandler('joegs', joegs, pass_args=True))
+    dp.add_handler(CommandHandler('semtompero', foodporn))
+    dp.add_handler(CommandHandler('comtompero', shittyfoodporn))
 
     # Unknown command
     # dp.add_handler(MessageHandler(Filters.command, unknown))
@@ -170,5 +198,9 @@ if __name__ == "__main__":
     MAX_TRIES = 500 # will try showing unique msg X times before giving up
     
     memory = {}
+
+    reddit = praw.Reddit(client_id=auth.REDDIT_CID,
+                         client_secret=auth.REDDIT_CSECRET,
+                         user_agent=auth.REDDIT_UA)
 
     main()
