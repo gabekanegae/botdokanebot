@@ -7,3 +7,6 @@ joegs -É verdade ou não é?
 comtompero - Com tompero.
 semtompero - Sem tompero.
 itimalia - Ai modeuzu.
+almoco - Envia o cardápio do almoço
+jantar - Envia o cardápio do jantar
+toschi - MAIS BIXOOOOOOO

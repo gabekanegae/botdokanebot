@@ -19,16 +19,15 @@ def help(bot, update):
     myself, text, isGroup, chatID, chatName, canRunAdmin = getMsgAttributes(bot, update)
 
     h = [
-        "`/help`\n",
-        "> mostra isso aqui\n",
+        "tem `/bcc`, `/bbc`, `/filme`, `/fwd` e altas merdas\n",
         "\n",
-        "tbm tem `/bcc`, `/bbc`, `/filme`, `/fwd` e mais outras merdas\n"
+        "digita / no chat e ve qq aparece ali\n"
         ]
 
     s = "".join(h)
     bot.send_message(chat_id=chatID, text=s, parse_mode="Markdown")
 
-def bcc(bot, update): # /bcc
+def bcc(bot, update):
     printCommandExecution(bot, update)
     myself, text, isGroup, chatID, chatName, canRunAdmin = getMsgAttributes(bot, update)
 
@@ -128,34 +127,94 @@ def foodporn(bot, update):
     printCommandExecution(bot, update)
     myself, text, isGroup, chatID, chatName, canRunAdmin = getMsgAttributes(bot, update)
 
-    try:
-        imgDesc, imgUrl = getRandomImageSubreddit(reddit, "shittyfoodporn")
-        bot.send_photo(chat_id=chatID, photo=imgUrl, caption=imgDesc)
-    except:
-        s = "carai capotei o corsa, pera ai"
-        bot.send_message(chat_id=chatID, text=s, parse_mode="Markdown")
+    now = int(time())
+    tries = 0
+    while True:
+        imgDesc, imgUrl = getRandomImageSubreddit(reddit, "foodporn")
+
+        try:
+            tries += 1
+            s = "shittyfoodporn#" + str(imgUrl)
+            if s not in memory or now-memory[s] >= MEMORY_TIMEOUT or tries >= MAX_TRIES:
+                try:
+                    assert(imgUrl.endswith(".jpg") or imgUrl.endswith(".png") or imgUrl.endswith(".jpeg"))
+                    bot.send_photo(chat_id=chatID, photo=imgUrl, caption=imgDesc)
+                except:
+                    s = "carai capotei o corsa, pera ai"
+                    bot.send_message(chat_id=chatID, text=s, parse_mode="Markdown")
+                memory[s] = now
+                break
+        except:
+            pass
 
 def shittyfoodporn(bot, update):
     printCommandExecution(bot, update)
     myself, text, isGroup, chatID, chatName, canRunAdmin = getMsgAttributes(bot, update)
 
-    try:
-        imgDesc, imgUrl = getRandomImageSubreddit(reddit, "foodporn")
-        bot.send_photo(chat_id=chatID, photo=imgUrl, caption=imgDesc)
-    except:
-        s = "carai capotei o corsa, pera ai"
-        bot.send_message(chat_id=chatID, text=s, parse_mode="Markdown")
+    now = int(time())
+    tries = 0
+    while True:
+        imgDesc, imgUrl = getRandomImageSubreddit(reddit, "shittyfoodporn")
+
+        try:
+            tries += 1
+            s = "shittyfoodporn#" + str(imgUrl)
+            if s not in memory or now-memory[s] >= MEMORY_TIMEOUT or tries >= MAX_TRIES:
+                try:
+                    assert(imgUrl.endswith(".jpg") or imgUrl.endswith(".png") or imgUrl.endswith(".jpeg"))
+                    bot.send_photo(chat_id=chatID, photo=imgUrl, caption=imgDesc)
+                except:
+                    s = "carai capotei o corsa, pera ai"
+                    bot.send_message(chat_id=chatID, text=s, parse_mode="Markdown")
+                memory[s] = now
+                break
+        except:
+            pass
 
 def superaww(bot, update):
     printCommandExecution(bot, update)
     myself, text, isGroup, chatID, chatName, canRunAdmin = getMsgAttributes(bot, update)
 
-    try:
+    now = int(time())
+    tries = 0
+    while True:
         imgDesc, imgUrl = getRandomImageMultireddit(reddit, "316nuts", "superaww")
-        bot.send_photo(chat_id=chatID, photo=imgUrl, caption=imgDesc)
-    except:
-        s = "morri de fofura calma"
-        bot.send_message(chat_id=chatID, text=s, parse_mode="Markdown")
+
+        try:
+            tries += 1
+            s = "superaww#" + str(imgUrl)
+            if s not in memory or now-memory[s] >= MEMORY_TIMEOUT or tries >= MAX_TRIES:
+                try:
+                    assert(imgUrl.endswith(".jpg") or imgUrl.endswith(".png") or imgUrl.endswith(".jpeg"))
+                    bot.send_photo(chat_id=chatID, photo=imgUrl, caption=imgDesc)
+                except:
+                    s = "morri de fofura calma"
+                    bot.send_message(chat_id=chatID, text=s, parse_mode="Markdown")
+                memory[s] = now
+                break
+        except:
+            pass
+
+def almoco(bot, update):
+    printCommandExecution(bot, update)
+    myself, text, isGroup, chatID, chatName, canRunAdmin = getMsgAttributes(bot, update)
+
+    bot.forwardMessage(chatID, '@ofwdnovo', 301)
+    bot.forwardMessage(chatID, '@ofwdnovo', 302)
+
+def jantar(bot, update):
+    printCommandExecution(bot, update)
+    myself, text, isGroup, chatID, chatName, canRunAdmin = getMsgAttributes(bot, update)
+
+    bot.forwardMessage(chatID, '@ofwdnovo', 326)
+    bot.forwardMessage(chatID, '@ofwdnovo', 327)
+
+def toschi(bot, update):
+    printCommandExecution(bot, update)
+    myself, text, isGroup, chatID, chatName, canRunAdmin = getMsgAttributes(bot, update)
+
+    bot.forwardMessage(chatID, '@ofwdnovo', 362)
+    bot.forwardMessage(chatID, '@ofwdnovo', 363)
 
 def unknown(bot, update):
     printCommandExecution(bot, update)
@@ -178,9 +237,12 @@ def main():
     dp.add_handler(CommandHandler('bbc', bbc))
     dp.add_handler(CommandHandler('fwd', fwd))
     dp.add_handler(CommandHandler('joegs', joegs, pass_args=True))
-    dp.add_handler(CommandHandler('semtompero', foodporn))
-    dp.add_handler(CommandHandler('comtompero', shittyfoodporn))
+    dp.add_handler(CommandHandler('semtompero', shittyfoodporn))
+    dp.add_handler(CommandHandler('comtompero', foodporn))
     dp.add_handler(CommandHandler('itimalia', superaww))
+    dp.add_handler(CommandHandler('almoco', almoco))
+    dp.add_handler(CommandHandler('jantar', jantar))
+    dp.add_handler(CommandHandler('toschi', toschi))
 
     # Unknown command
     # dp.add_handler(MessageHandler(Filters.command, unknown))
