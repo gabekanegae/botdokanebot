@@ -60,18 +60,20 @@ def filme(bot, update):
     myself, text, isGroup, chatID, chatName, canRunAdmin = getMsgAttributes(bot, update)
 
     now = int(time())
-    s = ""
+    s = None
     tries = 0
-    while ((s == "") or (s in memory and now-memory[s] < MEMORY_TIMEOUT)) and (tries < MAX_TRIES):
+    while ((s == None) or (s in memory and now-memory[s] < MEMORY_TIMEOUT)) and (tries < MAX_TRIES):
         tries += 1
     
         rPalavras = rd.randint(0, len(palavrasM) + len(palavrasF) - 1)
+        pick = rd.choice(filmeList)
+
         if rPalavras < len(palavrasM):
-            s = rd.choice(filmeMList).format(word=palavrasM[rPalavras])
+            s = parseGender(pick, "male").format(word=palavrasM[rPalavras])
             s = s.replace('ânuss', 'ânus')
         else:
             rPalavras -= len(palavrasM)
-            s = rd.choice(filmeFList).format(word=palavrasF[rPalavras])
+            s = parseGender(pick, "female").format(word=palavrasF[rPalavras])
 
     memory[s] = now
     bot.send_message(chat_id=chatID, text=s, parse_mode="Markdown")
@@ -258,8 +260,7 @@ if __name__ == "__main__":
     bbcList = loadFile("bbc.txt")
     bccList = loadFile("bcc.txt")
 
-    filmeMList = loadFile("filmeM.txt")
-    filmeFList = loadFile("filmeF.txt")
+    filmeList = loadFile("filme.txt")
     palavrasM = ['cu', 'pinto', 'ânus', 'pipi', 'temer', 'caralho', 'talkei', 'furico']
     palavrasF = ['rola', 'vagina', 'dilma', 'jeba', 'mamata', 'puta', 'champola']
 

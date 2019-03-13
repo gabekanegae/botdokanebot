@@ -28,6 +28,24 @@ def loadFile(filename):
 
     return content
 
+def parseGender(filme, gender):
+    words = filme.split()
+
+    if gender == "male":
+        for i in range(len(words)):
+            if words[i].startswith("["):
+                s = words[i].index("[")+1
+                e = words[i].index("|")
+                words[i] = words[i][s:e]
+    else: # female
+        for i in range(len(words)):
+            if words[i].startswith("["):
+                s = words[i].index("|")+1
+                e = words[i].index("]")
+                words[i] = words[i][s:e]
+
+    return " ".join(words)
+
 def getRandomImageSubreddit(reddit, subreddit, l=50):
     sub = reddit.subreddit(subreddit)
     posts = [post for post in sub.hot(limit=l)]
