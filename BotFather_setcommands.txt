@@ -1,4 +1,4 @@
-help - Mostra a lista de comandos
+help - Mostra informações sobre o bot
 bbc - Cursos de BBC
 bcc - Cursos de BCC
 filme - Remakes de filmes

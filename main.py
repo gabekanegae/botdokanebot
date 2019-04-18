@@ -19,9 +19,10 @@ def help(bot, update):
     myself, text, isGroup, chatID, chatName, canRunAdmin = getMsgAttributes(bot, update)
 
     h = [
-        "tem `/bcc`, `/bbc`, `/filme`, `/fwd` e altas merdas\n",
+        "pra ver os comando digita / no chat e ve qq aparece ali\n",
         "\n",
-        "digita / no chat e ve qq aparece ali\n"
+        "vamo ajuda a faze o bot kkkkk\n",
+        "https://github.com/KanegaeGabriel/botdokanebot/\n"
         ]
 
     s = "".join(h)
