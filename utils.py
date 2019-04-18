@@ -59,10 +59,3 @@ def getRandomImageMultireddit(reddit, user, multireddit, l=50):
 
     randomPost = rd.choice(posts)
     return randomPost.title, randomPost.url
-
-def DEPRECATED_getRandomImageSubreddit(subreddit):
-    URL = "https://www.reddit.com/r/" + subreddit + "/random.json"
-    r = requests.get(URL, headers={'User-agent': 'telegram:@botdokanebot:v1.1 (by /u/Kanegae)'}).json()
-
-    imgUrl = r[0]["data"]["children"][0]["data"]["url"]
-    return imgUrl

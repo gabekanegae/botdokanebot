@@ -1,12 +1,14 @@
-help - Mostra a lista de comandos.
-bbc - Cursos de BBC.
-bcc - Cursos de BCC.
-filme - Remakes de filmes.
-fwd - Altas merdas.
+help - Mostra a lista de comandos
+bbc - Cursos de BBC
+bcc - Cursos de BCC
+filme - Remakes de filmes
+fwd - Altas merdas
 joegs -É verdade ou não é?
-comtompero - Com tompero.
-semtompero - Sem tompero.
-itimalia - Ai modeuzu.
+comtompero - Com tompero
+semtompero - Sem tompero
+itimalia - Ai modeuzu
 almoco - Envia o cardápio do almoço
 jantar - Envia o cardápio do jantar
+proximo - Envia o cardápio da próxima refeição
+bandeco - ENVIA A PORRA DO CARDÁPIOOOOO
 toschi - MAIS BIXOOOOOOO

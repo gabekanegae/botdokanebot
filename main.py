@@ -2,7 +2,7 @@ from telegram.ext import Updater, CommandHandler, MessageHandler, Filters
 import logging
 import requests, praw
 import random as rd
-from time import time
+from time import time, strftime, gmtime
 
 import auth # Telegram Bot Token
 from utils import *
@@ -197,19 +197,17 @@ def superaww(bot, update):
         except:
             pass
 
-def almoco(bot, update):
+def bandeco(bot, update):
     printCommandExecution(bot, update)
     myself, text, isGroup, chatID, chatName, canRunAdmin = getMsgAttributes(bot, update)
 
-    bot.forwardMessage(chatID, '@ofwdnovo', 301)
-    bot.forwardMessage(chatID, '@ofwdnovo', 302)
-
-def jantar(bot, update):
-    printCommandExecution(bot, update)
-    myself, text, isGroup, chatID, chatName, canRunAdmin = getMsgAttributes(bot, update)
-
-    bot.forwardMessage(chatID, '@ofwdnovo', 326)
-    bot.forwardMessage(chatID, '@ofwdnovo', 327)
+    r = rd.randint(0, 1)
+    if r == 0:
+        bot.forwardMessage(chatID, '@ofwdnovo', 301)
+        bot.forwardMessage(chatID, '@ofwdnovo', 302)
+    else:
+        bot.forwardMessage(chatID, '@ofwdnovo', 326)
+        bot.forwardMessage(chatID, '@ofwdnovo', 327)
 
 def toschi(bot, update):
     printCommandExecution(bot, update)
@@ -217,6 +215,73 @@ def toschi(bot, update):
 
     bot.forwardMessage(chatID, '@ofwdnovo', 362)
     bot.forwardMessage(chatID, '@ofwdnovo', 363)
+
+def almoco(bot, update): proximo(bot, update, "almoco")
+def jantar(bot, update): proximo(bot, update, "jantar")
+
+def proximo(bot, update, option=None):
+    printCommandExecution(bot, update)
+    myself, text, isGroup, chatID, chatName, canRunAdmin = getMsgAttributes(bot, update)
+    
+    m, d, A, H = strftime("%m %d %A %H", gmtime(time()-3*60*60)).split()
+    H = int(H)
+    weekdays = {"Monday": "Segunda", "Tuesday": "Terça",
+                "Wednesday": "Quarta", "Thursday": "Quinta",
+                "Friday": "Sexta", "Saturday": "Sábado",
+                "Sunday": "Domingo"}
+
+    if not option:
+        if H <= 13 or H >= 19:
+            mealTime = "☀ Almoço"
+        else:
+            mealTime = "🌙 Jantar"
+    elif option == "almoco":
+        mealTime = "☀ Almoço"
+    else:
+        mealTime = "🌙 Jantar"
+    
+    weekday = weekdays[A]
+    day = d + "/" + m
+
+    if weekday == "Domingo" or (weekday == "Sábado" and mealTime == "🌙 Jantar"):
+        s = "🏫 São Carlos, Área 1 🍽\n{} de {} ({}):\nFechado"
+        bot.send_message(chat_id=chatID, text=s, parse_mode="Markdown")
+        return
+
+    mealKey = day + "(" + mealTime[3] + ")"
+    if mealKey in memory:
+        s = memory[mealKey]
+        bot.send_message(chat_id=chatID, text=s, parse_mode="Markdown")
+        return
+
+    calories = 550 + rd.randint(0, 800)
+
+    with open("cardapio.txt") as f:
+        cardapio = [l.strip() for l in f.readlines()]
+
+    s, c = cardapio.index("SALADAS")+1, cardapio.index("CARNES")+1
+    v, m = cardapio.index("VEGS")+1, cardapio.index("MISTURAS")+1
+    d, f = cardapio.index("DOCES")+1, cardapio.index("FRUTAS")+1
+    p, b = cardapio.index("PAES")+1, cardapio.index("BEBIDAS")+1
+
+    salada = rd.choice(cardapio[s:c-2])
+    carne = rd.choice(cardapio[c:v-2])
+    veg = rd.choice(cardapio[v:m-2])
+    mistura = rd.choice(cardapio[m:d-2])
+    doce = rd.choice(cardapio[d:f-2])
+    fruta = rd.choice(cardapio[f:p-2])
+    pao = rd.choice(cardapio[p:b-2])
+    bebida = rd.choice(cardapio[b:])
+
+    s = "🏫 São Carlos, Área 1 🍽\n{} de {} ({}):\n"
+    s += "Arroz/Feijão/Arroz Integral/\n{}/\n{}\n"
+    s += "Opção Vegetariana: {}/\n{}/\nSobremesa: {}\n{}/\n"
+    s += "{}\n{}\n\nValor energético médio: ⚡ {}Kcal"
+
+    s = s.format(mealTime, weekday, day, salada, carne, veg, mistura, doce, fruta, pao, bebida, calories)
+
+    memory[mealKey] = s
+    bot.send_message(chat_id=chatID, text=s, parse_mode="Markdown")
 
 def unknown(bot, update):
     printCommandExecution(bot, update)
@@ -244,6 +309,8 @@ def main():
     dp.add_handler(CommandHandler('itimalia', superaww))
     dp.add_handler(CommandHandler('almoco', almoco))
     dp.add_handler(CommandHandler('jantar', jantar))
+    dp.add_handler(CommandHandler('proximo', proximo))
+    dp.add_handler(CommandHandler('bandeco', bandeco))
     dp.add_handler(CommandHandler('toschi', toschi))
 
     # Unknown command
