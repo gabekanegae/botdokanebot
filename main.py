@@ -1,4 +1,5 @@
 from telegram.ext import Updater, CommandHandler, MessageHandler, Filters
+from sys import argv
 import logging
 import requests, praw
 import random as rd
@@ -294,7 +295,7 @@ def unknown(bot, update):
 def main():
     logging.basicConfig(format='%(asctime)s - %(name)s - %(levelname)s - %(message)s', level=logging.INFO)
     logger = logging.getLogger(__name__)
-    updater = Updater(token=auth.PROD_TOKEN)
+    updater = Updater(token=auth.TEST_TOKEN if "test" in argv else auth.PROD_TOKEN)
     dp = updater.dispatcher
 
     # Commands
@@ -318,7 +319,7 @@ def main():
     # dp.add_handler(MessageHandler(Filters.command, unknown))
 
     updater.start_polling()
-    print("Bot running...")
+    print("Bot running at {}...".format("TEST_TOKEN" if "test" in argv else "PROD_TOKEN"))
 
     updater.idle()
 
