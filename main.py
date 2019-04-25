@@ -275,7 +275,7 @@ def proximo(bot, update, option=None):
     pao = rd.choice(cardapio[p:b-2])
     bebida = rd.choice(cardapio[b:])
 
-    s = "🏫 São Carlos, Área 1 🍽\n{} de {} ({}):\n"
+    s = "*🏫 São Carlos, Área 1 🍽\n{} de {} ({}):*\n"
     s += "Arroz/Feijão/Arroz Integral/\n{}/\n{}\n"
     s += "Opção Vegetariana: {}/\n{}/\nSobremesa: {}\n{}/\n"
     s += "{}\n{}\n\nValor energético médio: ⚡ {}Kcal"
@@ -295,7 +295,7 @@ def unknown(bot, update):
 def main():
     logging.basicConfig(format='%(asctime)s - %(name)s - %(levelname)s - %(message)s', level=logging.INFO)
     logger = logging.getLogger(__name__)
-    updater = Updater(token=auth.TEST_TOKEN if "test" in argv else auth.PROD_TOKEN)
+    updater = Updater(token=TOKEN)
     dp = updater.dispatcher
 
     # Commands
@@ -319,7 +319,7 @@ def main():
     # dp.add_handler(MessageHandler(Filters.command, unknown))
 
     updater.start_polling()
-    print("Bot running at {}...".format("TEST_TOKEN" if "test" in argv else "PROD_TOKEN"))
+    print("Bot running...")
 
     updater.idle()
 
@@ -343,4 +343,5 @@ if __name__ == "__main__":
                          client_secret=auth.REDDIT_CSECRET,
                          user_agent=auth.REDDIT_UA)
 
+    TOKEN = auth.TEST_TOKEN if "test" in argv else auth.PROD_TOKEN
     main()
