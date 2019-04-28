@@ -3,7 +3,7 @@ bbc - Cursos de BBC
 bcc - Cursos de BCC
 filme - Remakes de filmes
 fwd - Altas merdas
-joegs -É verdade ou não é?
+joegs - É verdade ou não é?
 comtompero - Com tompero
 semtompero - Sem tompero
 itimalia - Ai modeuzu

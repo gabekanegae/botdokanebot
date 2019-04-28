@@ -246,7 +246,7 @@ def proximo(bot, update, option=None):
     day = d + "/" + m
 
     if weekday == "Domingo" or (weekday == "Sábado" and mealTime == "🌙 Jantar"):
-        s = "🏫 São Carlos, Área 1 🍽\n{} de {} ({}):\nFechado"
+        s = "*🏫 São Carlos, Área 1 🍽\n{} de {} ({}):*\nFechado"
         bot.send_message(chat_id=chatID, text=s, parse_mode="Markdown")
         return
 
@@ -278,7 +278,7 @@ def proximo(bot, update, option=None):
     s = "*🏫 São Carlos, Área 1 🍽\n{} de {} ({}):*\n"
     s += "Arroz/Feijão/Arroz Integral/\n{}/\n{}\n"
     s += "Opção Vegetariana: {}/\n{}/\nSobremesa: {}\n{}/\n"
-    s += "{}\n{}\n\nValor energético médio: ⚡ {}Kcal"
+    s += "{}\n{}\n\n_Valor energético médio: ⚡ {}Kcal_"
 
     s = s.format(mealTime, weekday, day, salada, carne, veg, mistura, doce, fruta, pao, bebida, calories)
 
@@ -333,9 +333,9 @@ if __name__ == "__main__":
     palavrasM = ['cu', 'pinto', 'ânus', 'pipi', 'temer', 'caralho', 'talkei', 'furico']
     palavrasF = ['rola', 'vagina', 'dilma', 'jeba', 'mamata', 'puta', 'champola']
 
-    MEMORY_TIMEOUT = 5*60 # doesnt repeat messages shown within last X seconds
-    MAX_FWD_ID = 500 # fwd channel has less than X messages
-    MAX_TRIES = 500 # will try showing unique msg X times before giving up
+    MEMORY_TIMEOUT = 5*60 # Doesn't repeat messages shown within the last X seconds
+    MAX_FWD_ID = 500 # FWD channel has less than X messages
+    MAX_TRIES = 500 # Will try showing an unique message X times before giving up
     
     memory = {}
 
