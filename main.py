@@ -233,8 +233,12 @@ def proximo(bot, update, option=None):
                 "Sunday": "Domingo"}
 
     if not option:
-        if H <= 13 or H >= 19:
+        if H <= 13:
             mealTime = "☀ Almoço"
+        elif H >= 19:
+            mealTime = "☀ Almoço"
+            m, d, A, H = strftime("%m %d %A %H", gmtime(time()-3*60*60+5*60*60)).split()
+            H = int(H)
         else:
             mealTime = "🌙 Jantar"
     elif option == "almoco":
