@@ -247,6 +247,7 @@ def proximo(bot, update, option=None):
 
     if weekday == "Domingo" or (weekday == "Sábado" and mealTime == "🌙 Jantar"):
         s = "*🏫 São Carlos, Área 1 🍽\n{} de {} ({}):*\nFechado"
+        s = s.format(mealTime, weekday, day)
         bot.send_message(chat_id=chatID, text=s, parse_mode="Markdown")
         return
 
