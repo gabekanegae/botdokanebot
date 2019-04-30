@@ -23,7 +23,7 @@ def printCommandExecution(bot, update):
     print("{{{}}}@{} in {}[{}]: \"{}\"".format("A" if canRunAdmin else "U", myself, chatName, chatID, text))
 
 def loadFile(filename):
-    with open(filename) as f:
+    with open(filename, encoding="utf8") as f:
         content = [l.strip() for l in f]
 
     return content

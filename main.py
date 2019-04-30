@@ -263,7 +263,7 @@ def proximo(bot, update, option=None):
 
     calories = 550 + rd.randint(0, 800)
 
-    with open("cardapio.txt") as f:
+    with open("cardapio.txt", encoding="utf8") as f:
         cardapio = [l.strip() for l in f.readlines()]
 
     s, c = cardapio.index("SALADAS")+1, cardapio.index("CARNES")+1
