@@ -23,7 +23,7 @@ def printCommandExecution(bot, update):
     print("{{{}}}@{} in {}[{}]: \"{}\"".format("A" if canRunAdmin else "U", myself, chatName, chatID, text))
 
 def loadFile(filename):
-    with open(filename, encoding="utf8") as f:
+    with open(filename, encoding="UTF-8") as f:
         content = [l.strip() for l in f]
 
     return content
@@ -46,24 +46,12 @@ def parseGender(filme, gender):
 
     return " ".join(words)
 
-def getRandomImageSubreddit(reddit, subreddit, l=50):
-    sub = reddit.subreddit(subreddit)
-    posts = [post for post in sub.hot(limit=l)]
-
-    randomPost = None
-    isImage = False
-    while not isImage and posts:
-        randomPost = rd.choice(posts)
-        isImage = randomPost.url.endswith(".jpg") or randomPost.url.endswith(".png") or randomPost.url.endswith(".jpeg")
-        if not isImage: posts.remove(randomPost)
-
-    if randomPost:
-        return randomPost.title, randomPost.url
+def getRandomImageReddit(reddit, subreddit, user=None, l=50):
+    if not user:
+        sub = reddit.subreddit(subreddit)
     else:
-        return None, None
-
-def getRandomImageMultireddit(reddit, user, multireddit, l=50):
-    sub = reddit.multireddit(user, multireddit)
+        sub = reddit.multireddit(user, subreddit)
+    
     posts = [post for post in sub.hot(limit=l)]
 
     randomPost = None

@@ -1,6 +1,7 @@
 help - Mostra informações sobre o bot
-bbc - Cursos de BBC
 bcc - Cursos de BCC
+bbc - Cursos de BBC
+icmc - Institutos de CMC
 filme - Remakes de filmes
 fwd - Altas merdas
 joegs - É verdade ou não é?

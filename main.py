@@ -29,47 +29,23 @@ def help(bot, update):
     s = "".join(h)
     bot.send_message(chat_id=chatID, text=s, parse_mode="Markdown")
 
-def bcc(bot, update):
+def _getRandomFromFile(bot, update, file):
     printCommandExecution(bot, update)
     myself, text, isGroup, chatID, chatName, canRunAdmin = getMsgAttributes(bot, update)
 
     now = int(time())
-    s = ""
+    s = None
     tries = 0
-    while ((s == "") or (s in memory and now-memory[s] < MEMORY_TIMEOUT)) and (tries < MAX_TRIES):
+    while ((not s) or (s in memory and now-memory[s] < MEMORY_TIMEOUT)) and (tries < MAX_TRIES):
         tries += 1
-        s = rd.choice(bccList)
+        s = rd.choice(file)
 
     memory[s] = now
     bot.send_message(chat_id=chatID, text=s, parse_mode="Markdown")
 
-def bbc(bot, update):
-    printCommandExecution(bot, update)
-    myself, text, isGroup, chatID, chatName, canRunAdmin = getMsgAttributes(bot, update)
-
-    now = int(time())
-    s = ""
-    tries = 0
-    while ((s == "") or (s in memory and now-memory[s] < MEMORY_TIMEOUT)) and (tries < MAX_TRIES):
-        tries += 1
-        s = rd.choice(bbcList)
-
-    memory[s] = now
-    bot.send_message(chat_id=chatID, text=s, parse_mode="Markdown")
-
-def icmc(bot, update):
-    printCommandExecution(bot, update)
-    myself, text, isGroup, chatID, chatName, canRunAdmin = getMsgAttributes(bot, update)
-
-    now = int(time())
-    s = ""
-    tries = 0
-    while ((s == "") or (s in memory and now-memory[s] < MEMORY_TIMEOUT)) and (tries < MAX_TRIES):
-        tries += 1
-        s = rd.choice(icmcList)
-
-    memory[s] = now
-    bot.send_message(chat_id=chatID, text=s, parse_mode="Markdown")
+def bcc(bot, update): _getRandomFromFile(bot, update, bccList)
+def bbc(bot, update): _getRandomFromFile(bot, update, bbcList)
+def icmc(bot, update): _getRandomFromFile(bot, update, icmcList)
 
 def filme(bot, update):
     printCommandExecution(bot, update)
@@ -86,7 +62,7 @@ def filme(bot, update):
 
         if rPalavras < len(palavrasM):
             s = parseGender(pick, "male").format(word=palavrasM[rPalavras])
-            s = s.replace('ânuss', 'ânus')
+            s = s.replace("ânuss", "ânus")
         else:
             rPalavras -= len(palavrasM)
             s = parseGender(pick, "female").format(word=palavrasF[rPalavras])
@@ -106,7 +82,7 @@ def fwd(bot, update):
             tries += 1
             s = "fwd#" + str(messageID)
             if s not in memory or now-memory[s] >= MEMORY_TIMEOUT or tries >= MAX_TRIES:
-                bot.forwardMessage(chatID, '@ofwdnovo', messageID)
+                bot.forwardMessage(chatID, "@ofwdnovo", messageID)
                 memory[s] = now
                 break
         except:
@@ -141,7 +117,7 @@ def joegs(bot, update, args):
 
     bot.send_message(chat_id=chatID, text=s, parse_mode="Markdown")
 
-def foodporn(bot, update):
+def _getRandomFromReddit(bot, update, subreddit, user=None):
     printCommandExecution(bot, update)
     myself, text, isGroup, chatID, chatName, canRunAdmin = getMsgAttributes(bot, update)
 
@@ -150,9 +126,9 @@ def foodporn(bot, update):
     while True:
         try:
             tries += 1
-            imgDesc, imgUrl = getRandomImageSubreddit(reddit, "foodporn")
+            imgDesc, imgUrl = getRandomImageReddit(reddit, subreddit, user)
             
-            s = "shittyfoodporn#" + str(imgUrl)
+            s = subreddit + "#" + imgUrl
             if imgUrl and (s not in memory or now-memory[s] >= MEMORY_TIMEOUT or tries >= MAX_TRIES):
                 bot.send_photo(chat_id=chatID, photo=imgUrl, caption=imgDesc)
                 memory[s] = now
@@ -160,43 +136,9 @@ def foodporn(bot, update):
         except:
             pass
 
-def shittyfoodporn(bot, update):
-    printCommandExecution(bot, update)
-    myself, text, isGroup, chatID, chatName, canRunAdmin = getMsgAttributes(bot, update)
-
-    now = int(time())
-    tries = 0
-    while True:
-        try:
-            tries += 1
-            imgDesc, imgUrl = getRandomImageSubreddit(reddit, "shittyfoodporn")
-            
-            s = "shittyfoodporn#" + str(imgUrl)
-            if imgUrl and (s not in memory or now-memory[s] >= MEMORY_TIMEOUT or tries >= MAX_TRIES):
-                bot.send_photo(chat_id=chatID, photo=imgUrl, caption=imgDesc)
-                memory[s] = now
-                break
-        except:
-            pass
-
-def superaww(bot, update):
-    printCommandExecution(bot, update)
-    myself, text, isGroup, chatID, chatName, canRunAdmin = getMsgAttributes(bot, update)
-
-    now = int(time())
-    tries = 0
-    while True:
-        try:
-            tries += 1
-            imgDesc, imgUrl = getRandomImageMultireddit(reddit, "316nuts", "superaww")
-            
-            s = "superaww#" + str(imgUrl)
-            if imgUrl and (s not in memory or now-memory[s] >= MEMORY_TIMEOUT or tries >= MAX_TRIES):
-                bot.send_photo(chat_id=chatID, photo=imgUrl, caption=imgDesc)
-                memory[s] = now
-                break
-        except:
-            pass
+def foodporn(bot, update): _getRandomFromReddit(bot, update, "foodporn")
+def shittyfoodporn(bot, update): _getRandomFromReddit(bot, update, "shittyfoodporn")
+def superaww(bot, update): _getRandomFromReddit(bot, update, "superaww", "316nuts")
 
 def bandeco(bot, update):
     printCommandExecution(bot, update)
@@ -204,21 +146,18 @@ def bandeco(bot, update):
 
     r = rd.randint(0, 1)
     if r == 0:
-        bot.forwardMessage(chatID, '@ofwdnovo', 301)
-        bot.forwardMessage(chatID, '@ofwdnovo', 302)
+        bot.forwardMessage(chatID, "@ofwdnovo", 301)
+        bot.forwardMessage(chatID, "@ofwdnovo", 302)
     else:
-        bot.forwardMessage(chatID, '@ofwdnovo', 326)
-        bot.forwardMessage(chatID, '@ofwdnovo', 327)
+        bot.forwardMessage(chatID, "@ofwdnovo", 326)
+        bot.forwardMessage(chatID, "@ofwdnovo", 327)
 
 def toschi(bot, update):
     printCommandExecution(bot, update)
     myself, text, isGroup, chatID, chatName, canRunAdmin = getMsgAttributes(bot, update)
 
-    bot.forwardMessage(chatID, '@ofwdnovo', 362)
-    bot.forwardMessage(chatID, '@ofwdnovo', 363)
-
-def almoco(bot, update): proximo(bot, update, "almoco")
-def jantar(bot, update): proximo(bot, update, "jantar")
+    bot.forwardMessage(chatID, "@ofwdnovo", 362)
+    bot.forwardMessage(chatID, "@ofwdnovo", 363)
 
 def proximo(bot, update, option=None):
     printCommandExecution(bot, update)
@@ -262,9 +201,6 @@ def proximo(bot, update, option=None):
 
     calories = 550 + rd.randint(0, 800)
 
-    with open("cardapio.txt", encoding="utf8") as f:
-        cardapio = [l.strip() for l in f.readlines()]
-
     s, c = cardapio.index("SALADAS")+1, cardapio.index("CARNES")+1
     v, m = cardapio.index("VEGS")+1, cardapio.index("MISTURAS")+1
     d, f = cardapio.index("DOCES")+1, cardapio.index("FRUTAS")+1
@@ -289,39 +225,31 @@ def proximo(bot, update, option=None):
     memory[mealKey] = s
     bot.send_message(chat_id=chatID, text=s, parse_mode="Markdown")
 
-def unknown(bot, update):
-    printCommandExecution(bot, update)
-    myself, text, isGroup, chatID, chatName, canRunAdmin = getMsgAttributes(bot, update)
-
-    s = "eu n sei o q ele falo"
-    bot.send_message(chat_id=chatID, text=s, parse_mode="Markdown")
+def almoco(bot, update): proximo(bot, update, "almoco")
+def jantar(bot, update): proximo(bot, update, "jantar")
 
 def main():
-    logging.basicConfig(format='%(asctime)s - %(name)s - %(levelname)s - %(message)s', level=logging.INFO)
+    logging.basicConfig(format="%(asctime)s - %(name)s - %(levelname)s - %(message)s", level=logging.INFO)
     logger = logging.getLogger(__name__)
     updater = Updater(token=TOKEN)
     dp = updater.dispatcher
 
-    # Commands
-    dp.add_handler(CommandHandler('start', start))
-    dp.add_handler(CommandHandler('help', help))
-    dp.add_handler(CommandHandler('filme', filme))
-    dp.add_handler(CommandHandler('bcc', bcc))
-    dp.add_handler(CommandHandler('bbc', bbc))
-    dp.add_handler(CommandHandler('icmc', icmc))
-    dp.add_handler(CommandHandler('fwd', fwd))
-    dp.add_handler(CommandHandler('joegs', joegs, pass_args=True))
-    dp.add_handler(CommandHandler('semtompero', shittyfoodporn))
-    dp.add_handler(CommandHandler('comtompero', foodporn))
-    dp.add_handler(CommandHandler('itimalia', superaww))
-    dp.add_handler(CommandHandler('almoco', almoco))
-    dp.add_handler(CommandHandler('jantar', jantar))
-    dp.add_handler(CommandHandler('proximo', proximo))
-    dp.add_handler(CommandHandler('bandeco', bandeco))
-    dp.add_handler(CommandHandler('toschi', toschi))
-
-    # Unknown command
-    # dp.add_handler(MessageHandler(Filters.command, unknown))
+    dp.add_handler(CommandHandler("start", start))
+    dp.add_handler(CommandHandler("help", help))
+    dp.add_handler(CommandHandler("filme", filme))
+    dp.add_handler(CommandHandler("bcc", bcc))
+    dp.add_handler(CommandHandler("bbc", bbc))
+    dp.add_handler(CommandHandler("icmc", icmc))
+    dp.add_handler(CommandHandler("fwd", fwd))
+    dp.add_handler(CommandHandler("joegs", joegs, pass_args=True))
+    dp.add_handler(CommandHandler("comtompero", foodporn))
+    dp.add_handler(CommandHandler("semtompero", shittyfoodporn))
+    dp.add_handler(CommandHandler("itimalia", superaww))
+    dp.add_handler(CommandHandler("almoco", almoco))
+    dp.add_handler(CommandHandler("jantar", jantar))
+    dp.add_handler(CommandHandler("proximo", proximo))
+    dp.add_handler(CommandHandler("bandeco", bandeco))
+    dp.add_handler(CommandHandler("toschi", toschi))
 
     updater.start_polling()
     print("Bot running...")
@@ -336,10 +264,12 @@ if __name__ == "__main__":
     icmcList = loadFile("icmc.txt")
 
     filmeList = loadFile("filme.txt")
-    palavrasM = ['cu', 'pinto', 'ânus', 'pipi', 'temer', 'caralho', 'talkei', 'furico']
-    palavrasF = ['rola', 'vagina', 'dilma', 'jeba', 'mamata', 'puta', 'champola', 'bunda']
+    palavrasM = ["cu", "pinto", "ânus", "pipi", "temer", "caralho", "talkei", "furico"]
+    palavrasF = ["rola", "vagina", "dilma", "jeba", "mamata", "puta", "champola", "bunda"]
 
-    MEMORY_TIMEOUT = 5*60 # Doesn't repeat messages shown within the last X seconds
+    cardapio = loadFile("cardapio.txt")
+
+    MEMORY_TIMEOUT = 5*60 # Doesn"t repeat messages shown within the last X seconds
     MAX_FWD_ID = 500 # FWD channel has less than X messages
     MAX_TRIES = 500 # Will try showing an unique message X times before giving up
     
