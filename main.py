@@ -134,18 +134,13 @@ def foodporn(bot, update):
     now = int(time())
     tries = 0
     while True:
-        imgDesc, imgUrl = getRandomImageSubreddit(reddit, "foodporn")
-
         try:
             tries += 1
+            imgDesc, imgUrl = getRandomImageSubreddit(reddit, "foodporn")
+            
             s = "shittyfoodporn#" + str(imgUrl)
-            if s not in memory or now-memory[s] >= MEMORY_TIMEOUT or tries >= MAX_TRIES:
-                try:
-                    assert(imgUrl.endswith(".jpg") or imgUrl.endswith(".png") or imgUrl.endswith(".jpeg"))
-                    bot.send_photo(chat_id=chatID, photo=imgUrl, caption=imgDesc)
-                except:
-                    s = "carai capotei o corsa, pera ai"
-                    bot.send_message(chat_id=chatID, text=s, parse_mode="Markdown")
+            if imgUrl and (s not in memory or now-memory[s] >= MEMORY_TIMEOUT or tries >= MAX_TRIES):
+                bot.send_photo(chat_id=chatID, photo=imgUrl, caption=imgDesc)
                 memory[s] = now
                 break
         except:
@@ -158,18 +153,13 @@ def shittyfoodporn(bot, update):
     now = int(time())
     tries = 0
     while True:
-        imgDesc, imgUrl = getRandomImageSubreddit(reddit, "shittyfoodporn")
-
         try:
             tries += 1
+            imgDesc, imgUrl = getRandomImageSubreddit(reddit, "shittyfoodporn")
+            
             s = "shittyfoodporn#" + str(imgUrl)
-            if s not in memory or now-memory[s] >= MEMORY_TIMEOUT or tries >= MAX_TRIES:
-                try:
-                    assert(imgUrl.endswith(".jpg") or imgUrl.endswith(".png") or imgUrl.endswith(".jpeg"))
-                    bot.send_photo(chat_id=chatID, photo=imgUrl, caption=imgDesc)
-                except:
-                    s = "carai capotei o corsa, pera ai"
-                    bot.send_message(chat_id=chatID, text=s, parse_mode="Markdown")
+            if imgUrl and (s not in memory or now-memory[s] >= MEMORY_TIMEOUT or tries >= MAX_TRIES):
+                bot.send_photo(chat_id=chatID, photo=imgUrl, caption=imgDesc)
                 memory[s] = now
                 break
         except:
@@ -182,18 +172,13 @@ def superaww(bot, update):
     now = int(time())
     tries = 0
     while True:
-        imgDesc, imgUrl = getRandomImageMultireddit(reddit, "316nuts", "superaww")
-
         try:
             tries += 1
+            imgDesc, imgUrl = getRandomImageMultireddit(reddit, "316nuts", "superaww")
+            
             s = "superaww#" + str(imgUrl)
-            if s not in memory or now-memory[s] >= MEMORY_TIMEOUT or tries >= MAX_TRIES:
-                try:
-                    assert(imgUrl.endswith(".jpg") or imgUrl.endswith(".png") or imgUrl.endswith(".jpeg"))
-                    bot.send_photo(chat_id=chatID, photo=imgUrl, caption=imgDesc)
-                except:
-                    s = "morri de fofura calma"
-                    bot.send_message(chat_id=chatID, text=s, parse_mode="Markdown")
+            if imgUrl and (s not in memory or now-memory[s] >= MEMORY_TIMEOUT or tries >= MAX_TRIES):
+                bot.send_photo(chat_id=chatID, photo=imgUrl, caption=imgDesc)
                 memory[s] = now
                 break
         except:
@@ -336,7 +321,7 @@ if __name__ == "__main__":
 
     filmeList = loadFile("filme.txt")
     palavrasM = ['cu', 'pinto', 'ânus', 'pipi', 'temer', 'caralho', 'talkei', 'furico']
-    palavrasF = ['rola', 'vagina', 'dilma', 'jeba', 'mamata', 'puta', 'champola']
+    palavrasF = ['rola', 'vagina', 'dilma', 'jeba', 'mamata', 'puta', 'champola', 'bunda']
 
     MEMORY_TIMEOUT = 5*60 # Doesn't repeat messages shown within the last X seconds
     MAX_FWD_ID = 500 # FWD channel has less than X messages

@@ -50,12 +50,30 @@ def getRandomImageSubreddit(reddit, subreddit, l=50):
     sub = reddit.subreddit(subreddit)
     posts = [post for post in sub.hot(limit=l)]
 
-    randomPost = rd.choice(posts)
-    return randomPost.title, randomPost.url
+    randomPost = None
+    isImage = False
+    while not isImage and posts:
+        randomPost = rd.choice(posts)
+        isImage = randomPost.url.endswith(".jpg") or randomPost.url.endswith(".png") or randomPost.url.endswith(".jpeg")
+        if not isImage: posts.remove(randomPost)
+
+    if randomPost:
+        return randomPost.title, randomPost.url
+    else:
+        return None, None
 
 def getRandomImageMultireddit(reddit, user, multireddit, l=50):
     sub = reddit.multireddit(user, multireddit)
     posts = [post for post in sub.hot(limit=l)]
 
-    randomPost = rd.choice(posts)
-    return randomPost.title, randomPost.url
+    randomPost = None
+    isImage = False
+    while not isImage and posts:
+        randomPost = rd.choice(posts)
+        isImage = randomPost.url.endswith(".jpg") or randomPost.url.endswith(".png") or randomPost.url.endswith(".jpeg")
+        if not isImage: posts.remove(randomPost)
+
+    if randomPost:
+        return randomPost.title, randomPost.url
+    else:
+        return None, None
