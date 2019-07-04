@@ -57,6 +57,20 @@ def bbc(bot, update):
     memory[s] = now
     bot.send_message(chat_id=chatID, text=s, parse_mode="Markdown")
 
+def icmc(bot, update):
+    printCommandExecution(bot, update)
+    myself, text, isGroup, chatID, chatName, canRunAdmin = getMsgAttributes(bot, update)
+
+    now = int(time())
+    s = ""
+    tries = 0
+    while ((s == "") or (s in memory and now-memory[s] < MEMORY_TIMEOUT)) and (tries < MAX_TRIES):
+        tries += 1
+        s = rd.choice(icmcList)
+
+    memory[s] = now
+    bot.send_message(chat_id=chatID, text=s, parse_mode="Markdown")
+
 def filme(bot, update):
     printCommandExecution(bot, update)
     myself, text, isGroup, chatID, chatName, canRunAdmin = getMsgAttributes(bot, update)
@@ -294,6 +308,7 @@ def main():
     dp.add_handler(CommandHandler('filme', filme))
     dp.add_handler(CommandHandler('bcc', bcc))
     dp.add_handler(CommandHandler('bbc', bbc))
+    dp.add_handler(CommandHandler('icmc', icmc))
     dp.add_handler(CommandHandler('fwd', fwd))
     dp.add_handler(CommandHandler('joegs', joegs, pass_args=True))
     dp.add_handler(CommandHandler('semtompero', shittyfoodporn))
@@ -316,8 +331,9 @@ def main():
 if __name__ == "__main__":
     JOEGS_URL = "http://nilc-fakenews.herokuapp.com/ajax/check/"
 
-    bbcList = loadFile("bbc.txt")
     bccList = loadFile("bcc.txt")
+    bbcList = loadFile("bbc.txt")
+    icmcList = loadFile("icmc.txt")
 
     filmeList = loadFile("filme.txt")
     palavrasM = ['cu', 'pinto', 'ânus', 'pipi', 'temer', 'caralho', 'talkei', 'furico']
