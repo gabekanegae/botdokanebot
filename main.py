@@ -138,7 +138,15 @@ def zapzap(bot, update, args):
             elif userMood in moodSassy: mood = "sassy"
             elif userMood in moodSick: mood = "sick"
 
-        body = {"zap": queryText, "mood": mood, "strength": "3", "rate": "0.5", "tweet": "false"}
+        origMsgWords = len(origMsg.text.split())
+        if origMsgWords <= 5:
+            rate = "1.0"
+        elif origMsgWords <= 15:
+            rate = "0.8"
+        else:
+            rate = "0.6"
+
+        body = {"zap": queryText, "mood": mood, "strength": "3", "rate": rate, "tweet": "false"}
 
         try:
             r = requests.post(url=FLIPPER_URL, data=body).json()
