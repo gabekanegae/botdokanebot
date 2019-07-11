@@ -5,6 +5,7 @@ icmc - Institutos de CMC
 filme - Remakes de filmes
 fwd - Altas merdas
 joegs - É verdade ou não é?
+zapzap - Quem tem zap zap levanta a mão
 comtompero - Com tompero
 semtompero - Sem tompero
 itimalia - Ai modeuzu

@@ -95,12 +95,10 @@ def joegs(bot, update, args):
     origMsg = update.message.reply_to_message
 
     queryText = None
-    if len(args) != 0:
-        queryText = " ".join(args)
-    elif origMsg and origMsg.text:
+    if origMsg and origMsg.text:
         queryText = origMsg.text
     else:
-        s = "manda alguma coisa porra"
+        s = "manda o comando respondendo a alguma msg pfvr"
 
     if queryText:
         body = {"text": queryText, "model": "pos"}
@@ -114,6 +112,40 @@ def joegs(bot, update, args):
                 s = "sei nao hein, se pa eh fake"
         except:
             s = "caraio o joegs fudeu o role, alguem chama ele"
+
+    bot.send_message(chat_id=chatID, text=s, parse_mode="Markdown")
+
+def zapzap(bot, update, args):
+    printCommandExecution(bot, update)
+    myself, text, isGroup, chatID, chatName, canRunAdmin = getMsgAttributes(bot, update)
+
+    origMsg = update.message.reply_to_message
+
+    queryText = None
+    if origMsg and origMsg.text:
+        queryText = origMsg.text
+    else:
+        s = "manda o comando respondendo a alguma msg pfvr\n\nopções: angry/happy/sad/sassy/sick"
+
+    if queryText:
+        mood = "happy"
+        if len(args) != 0:
+            userMood = args[0].lower()
+
+            if userMood in moodAngry: mood = "angry"
+            elif userMood in moodHappy: mood = "happy"
+            elif userMood in moodSad: mood = "sad"
+            elif userMood in moodSassy: mood = "sassy"
+            elif userMood in moodSick: mood = "sick"
+
+        body = {"zap": queryText, "mood": mood, "strength": "3", "rate": "0.5", "tweet": "false"}
+
+        try:
+            r = requests.post(url=FLIPPER_URL, data=body).json()
+
+            if r["zap"]: s = r["zap"]
+        except:
+            s = "puta merda chama o flipper que deu ruim aqui"
 
     bot.send_message(chat_id=chatID, text=s, parse_mode="Markdown")
 
@@ -193,7 +225,7 @@ def proximo(bot, update, option=None):
         bot.send_message(chat_id=chatID, text=s, parse_mode="Markdown")
         return
 
-    mealKey = day + "(" + mealTime[3] + ")"
+    mealKey = "cardapio#" + day + mealTime[2]
     if mealKey in memory:
         s = memory[mealKey]
         bot.send_message(chat_id=chatID, text=s, parse_mode="Markdown")
@@ -242,6 +274,7 @@ def main():
     dp.add_handler(CommandHandler("icmc", icmc))
     dp.add_handler(CommandHandler("fwd", fwd))
     dp.add_handler(CommandHandler("joegs", joegs, pass_args=True))
+    dp.add_handler(CommandHandler("zapzap", zapzap, pass_args=True))
     dp.add_handler(CommandHandler("comtompero", foodporn))
     dp.add_handler(CommandHandler("semtompero", shittyfoodporn))
     dp.add_handler(CommandHandler("itimalia", superaww))
@@ -258,6 +291,7 @@ def main():
 
 if __name__ == "__main__":
     JOEGS_URL = "http://nilc-fakenews.herokuapp.com/ajax/check/"
+    FLIPPER_URL = "http://vemdezapbe.be/api/v1.0/zap/"
 
     bccList = loadFile("bcc.txt")
     bbcList = loadFile("bbc.txt")
@@ -269,15 +303,27 @@ if __name__ == "__main__":
 
     cardapio = loadFile("cardapio.txt")
 
-    MEMORY_TIMEOUT = 5*60 # Doesn"t repeat messages shown within the last X seconds
-    MAX_FWD_ID = 500 # FWD channel has less than X messages
-    MAX_TRIES = 500 # Will try showing an unique message X times before giving up
-    
-    memory = {}
+    emojiAngry = "😡😠🤬😤😣"
+    emojiHappy = "😀😃😄😁😆😅🤣😂🙂🙃😊😇🥰😍🤩☺😋😛😜🤪😝🤑🤗🤭🤔😬😌😪🤤😴🤠🥳😎🤓🧐"
+    emojiSad = "🤐🤫🤨😐😑😶😒🙄😔🤥😕😟🙁☹😮😯😲😳🥺😦😧😨😰😥😢😭😱😖😞😓😩😫"
+    emojiSassy = "😏😚😙😉😘😗😈👿"
+    emojiSick = "😷🤒🤕🤢🤮🤧🥵🥶🥴😵🤯"
 
+    moodAngry = set(["angry", "bravo", "brabo", "puto"] + list(emojiAngry))
+    moodHappy = set(["happy", "feliz"] + list(emojiHappy))
+    moodSad = set(["sad", "triste"] + list(emojiSad))
+    moodSassy = set(["sassy", "tarado", "safado"] + list(emojiSassy))
+    moodSick = set(["sick", "doente"] + list(emojiSick))
+
+    MEMORY_TIMEOUT = 5*60 # Doesn't repeat messages shown within the last X seconds
+    MAX_FWD_ID = 600 # FWD channel has less than X messages
+    MAX_TRIES = 100 # Will try showing an unique message X times before giving up
+    
     reddit = praw.Reddit(client_id=auth.REDDIT_CID,
                          client_secret=auth.REDDIT_CSECRET,
                          user_agent=auth.REDDIT_UA)
+
+    memory = {}
 
     TOKEN = auth.TEST_TOKEN if "test" in argv else auth.PROD_TOKEN
     main()
