@@ -239,7 +239,7 @@ xuxa só para {word}s
 {word} de vingança
 {word} e preconceito
 {word} em apuros
-{word} extraordinário
+{word} extraordinári[o|a]
 {word} fury
 {word} impossível 3
 {word} mia: here we go again
