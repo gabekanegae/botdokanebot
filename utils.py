@@ -9,8 +9,8 @@ def logMessageReceived(bot, update, logger):
     text = str(update.message.text)
 
     isGroup = str(update.message.chat.type) == "group"
-    chatName = str(update.message.chat.title if isGroup else "PRIV")
-    chatID = "(" + str(update.message.chat_id) + ")" if not isGroup else ""
+    chatName = str(update.message.chat.title) if isGroup else "PRIV"
+    chatID = "(" + str(update.message.chat_id) + ")" if isGroup else ""
 
     text = "\\n".join(text.split("\n"))
 
@@ -26,8 +26,8 @@ def logMessageSent(bot, update, logger, msgType, msg, **kwargs):
     userID = str(update.message.from_user.id)
 
     isGroup = str(update.message.chat.type) == "group"
-    chatName = str(update.message.chat.title if isGroup else "PRIV")
-    chatID = "(" + str(update.message.chat_id) + ")" if not isGroup else ""
+    chatName = str(update.message.chat.title) if isGroup else "PRIV"
+    chatID = "(" + str(update.message.chat_id) + ")" if isGroup else ""
 
     msg = "\\n".join(str(msg).split("\n"))
 
