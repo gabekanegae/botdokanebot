@@ -1,26 +1,45 @@
 import requests
+import logging
 import praw
 import random as rd
 
-def getMsgAttributes(bot, update):
-    myself = str(update.message.from_user.username)
-    myselfID = str(update.message.from_user.id)
+def logMessageReceived(bot, update, logger):
+    user = str(update.message.from_user.username)
+    userID = str(update.message.from_user.id)
     text = str(update.message.text)
-    
+
     isGroup = str(update.message.chat.type) == "group"
-    chatID = str(update.message.chat_id)
-    chatName = str(update.message.chat.title if isGroup else update.message.chat.username)
+    chatName = str(update.message.chat.title if isGroup else "PRIV")
+    chatID = "(" + str(update.message.chat_id) + ")" if not isGroup else ""
 
-    cm = bot.getChatMember(chatID, int(myselfID))
-    isAdmin = cm.status == "creator" or cm.status == "administrator"
-    canRunAdmin = not isGroup or update.message.chat.all_members_are_administrators or isAdmin
+    text = "\\n".join(text.split("\n"))
 
-    return (myself, text, isGroup, chatID, chatName, canRunAdmin)
+    logger.info("RX @{}({}) @ {}{}: \"{}\"".format(user, userID, chatName, chatID, text))
+    if update.message.reply_to_message:
+        origText = str(update.message.reply_to_message.text)
+        origText = "\\n".join(origText.split("\n"))
 
-def printCommandExecution(bot, update):
-    myself, text, isGroup, chatID, chatName, canRunAdmin = getMsgAttributes(bot, update)
+        logger.info("    --> As reply to: \"{}\"".format(origText))
 
-    print("{{{}}}@{} in {}[{}]: \"{}\"".format("A" if canRunAdmin else "U", myself, chatName, chatID, text))
+def logMessageSent(bot, update, logger, msgType, msg, **kwargs):
+    user = str(update.message.from_user.username)
+    userID = str(update.message.from_user.id)
+
+    isGroup = str(update.message.chat.type) == "group"
+    chatName = str(update.message.chat.title if isGroup else "PRIV")
+    chatID = "(" + str(update.message.chat_id) + ")" if not isGroup else ""
+
+    msg = "\\n".join(str(msg).split("\n"))
+
+    if msgType == "TXT":
+        logger.info("TX @{}({}) @ {}{} (TXT): \"{}\""
+                    .format(user, userID, chatName, chatID, msg))
+    elif msgType == "IMG":
+        logger.info("TX @{}({}) @ {}{} (IMG): {} -- \"{}\""
+                     .format(user, userID, chatName, chatID, kwargs["url"], msg))
+    elif msgType == "FWD":
+        logger.info("TX @{}({}) @ {}{} (FWD): #{}({}) -- \"{}\""
+                     .format(user, userID, chatName, chatID, kwargs["origID"], kwargs["origChannel"], msg))
 
 def loadFile(filename):
     with open(filename, encoding="UTF-8") as f:
