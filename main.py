@@ -189,6 +189,7 @@ def _getRandomFromReddit(bot, update, subreddit, user=None):
 def foodporn(bot, update): _getRandomFromReddit(bot, update, "foodporn")
 def shittyfoodporn(bot, update): _getRandomFromReddit(bot, update, "shittyfoodporn")
 def superaww(bot, update): _getRandomFromReddit(bot, update, "superaww", "316nuts")
+def programmerhumor(bot, update): _getRandomFromReddit(bot, update, "programmerhumor")
 
 def bandeco(bot, update):
     logMessageReceived(bot, update, logger)
@@ -302,6 +303,7 @@ def main():
     dp.add_handler(CommandHandler("comtompero", foodporn))
     dp.add_handler(CommandHandler("semtompero", shittyfoodporn))
     dp.add_handler(CommandHandler("itimalia", superaww))
+    dp.add_handler(CommandHandler("computaria", programmerhumor))
     dp.add_handler(CommandHandler("almoco", almoco))
     dp.add_handler(CommandHandler("jantar", jantar))
     dp.add_handler(CommandHandler("proximo", proximo))

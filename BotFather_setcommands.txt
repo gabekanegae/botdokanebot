@@ -9,6 +9,7 @@ zapzap - Quem tem zap zap levanta a mão
 comtompero - Com tompero
 semtompero - Sem tompero
 itimalia - Ai modeuzu
+computaria - Use Rust
 almoco - Envia o cardápio do almoço
 jantar - Envia o cardápio do jantar
 proximo - Envia o cardápio da próxima refeição
