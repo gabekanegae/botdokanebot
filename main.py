@@ -287,6 +287,13 @@ def proximo(bot, update, option=None):
 def almoco(bot, update): proximo(bot, update, "almoco")
 def jantar(bot, update): proximo(bot, update, "jantar")
 
+def _sendSimpleText(bot, update, text):
+    logMessageReceived(bot, update, logger)
+    bot.send_message(chat_id=update.message.chat_id, text=text, parse_mode="Markdown")
+    logMessageSent(bot, update, logger, "TXT", s)
+
+def matricula(bot, update): _sendSimpleText(bot, update, "mais um semestre nao pfv n aguento mais")
+
 def main():
     updater = Updater(token=TOKEN)
     dp = updater.dispatcher
@@ -309,6 +316,7 @@ def main():
     dp.add_handler(CommandHandler("proximo", proximo))
     dp.add_handler(CommandHandler("bandeco", bandeco))
     dp.add_handler(CommandHandler("toschi", toschi))
+    dp.add_handler(CommandHandler("matricula", matricula))
 
     updater.start_polling()
     logging.info("=== Bot running! ===")

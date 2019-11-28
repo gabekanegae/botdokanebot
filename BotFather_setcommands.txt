@@ -15,3 +15,4 @@ jantar - Envia o cardápio do jantar
 proximo - Envia o cardápio da próxima refeição
 bandeco - ENVIA A PORRA DO CARDÁPIOOOOO
 toschi - MAIS BIXOOOOOOO
+matricula - chegou a epoca do ano
