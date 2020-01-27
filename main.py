@@ -96,7 +96,7 @@ def fwd(update, context):
     logMessageSent(update, context, logger, "FWD", str(messageID), origID=messageID, origChannel="@ofwdnovo")
     logger.info("    --> {} tries | Mem size: {}".format(tries, len(memory)))
 
-def joegs(update, context, args):
+def joegs(update, context):
     logMessageReceived(update, context, logger)
     
     origMsg = update.message.reply_to_message
@@ -123,7 +123,7 @@ def joegs(update, context, args):
     context.bot.send_message(chat_id=update.effective_chat.id, text=s, parse_mode="Markdown")
     logMessageSent(update, context, logger, "TXT", s)
 
-def zapzap(update, context, args):
+def zapzap(update, context):
     logMessageReceived(update, context, logger)
 
     origMsg = update.message.reply_to_message
@@ -136,8 +136,8 @@ def zapzap(update, context, args):
 
     if queryText:
         mood = "happy"
-        if len(args) != 0:
-            userMood = args[0].lower()
+        if len(context.args) != 0:
+            userMood = context.args[0].lower()
 
             if userMood in moodAngry: mood = "angry"
             elif userMood in moodHappy: mood = "happy"
