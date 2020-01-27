@@ -3,6 +3,7 @@ from sys import argv, stdout
 import requests
 import logging
 import praw
+import markovify
 import random as rd
 from time import time, strftime, gmtime
 
@@ -49,6 +50,10 @@ def _getRandomFromFile(bot, update, file):
 def bcc(bot, update): _getRandomFromFile(bot, update, bccList)
 def bbc(bot, update): _getRandomFromFile(bot, update, bbcList)
 def icmc(bot, update): _getRandomFromFile(bot, update, icmcList)
+
+def carluxo(bot, update):
+    text = carluxoMarkov.make_short_sentence(140)
+    bot.send_message(chat_id=update.message.chat_id, text=text)
 
 def filme(bot, update):
     logMessageReceived(bot, update, logger)
@@ -304,6 +309,7 @@ def main():
     dp.add_handler(CommandHandler("bcc", bcc))
     dp.add_handler(CommandHandler("bbc", bbc))
     dp.add_handler(CommandHandler("icmc", icmc))
+    dp.add_handler(CommandHandler("carluxo", carluxo))
     dp.add_handler(CommandHandler("fwd", fwd))
     dp.add_handler(CommandHandler("joegs", joegs, pass_args=True))
     dp.add_handler(CommandHandler("zapzap", zapzap, pass_args=True))
@@ -334,6 +340,7 @@ if __name__ == "__main__":
     bccList = loadFile("bcc.txt")
     bbcList = loadFile("bbc.txt")
     icmcList = loadFile("icmc.txt")
+    carluxoMarkov = markovify.Text("\n".join(loadFile("carluxo.txt")))
 
     filmeList = loadFile("filme.txt")
     palavrasM = ["cu", "pinto", "ânus", "pipi", "temer", "caralho", "talkei", "furico"]
