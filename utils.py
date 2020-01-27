@@ -3,7 +3,7 @@ import logging
 import praw
 import random as rd
 
-def logMessageReceived(bot, update, logger):
+def logMessageReceived(update, context, logger):
     user = str(update.message.from_user.username)
     userID = str(update.message.from_user.id)
     text = str(update.message.text)
@@ -21,7 +21,7 @@ def logMessageReceived(bot, update, logger):
 
         logger.info("    --> As reply to: \"{}\"".format(origText))
 
-def logMessageSent(bot, update, logger, msgType, msg, **kwargs):
+def logMessageSent(update, context, logger, msgType, msg, **kwargs):
     user = str(update.message.from_user.username)
     userID = str(update.message.from_user.id)
 
