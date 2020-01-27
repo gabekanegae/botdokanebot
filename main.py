@@ -64,7 +64,6 @@ def filme(update, context):
 
         if rPalavras < len(palavrasM):
             s = parseGender(pick, "male").format(word=palavrasM[rPalavras])
-            s = s.replace("ânuss", "ânus")
         else:
             rPalavras -= len(palavrasM)
             s = parseGender(pick, "female").format(word=palavrasF[rPalavras])
@@ -257,7 +256,7 @@ def proximo(update, context, option=None):
         context.bot.send_message(chat_id=update.effective_chat.id, text=s, parse_mode="Markdown")
         return
 
-    calories = 550 + rd.randint(0, 800)
+    calories = rd.randint(550, 1350)
 
     s, c = cardapio.index("SALADAS")+1, cardapio.index("CARNES")+1
     v, m = cardapio.index("VEGS")+1, cardapio.index("MISTURAS")+1
@@ -337,8 +336,8 @@ if __name__ == "__main__":
     icmcList = loadFile("icmc.txt")
 
     filmeList = loadFile("filme.txt")
-    palavrasM = ["cu", "pinto", "ânus", "pipi", "temer", "caralho", "talkei", "furico"]
-    palavrasF = ["rola", "vagina", "dilma", "jeba", "mamata", "puta", "champola", "bunda"]
+    palavrasM = ["cu", "pinto", "pipi", "caralho", "biroliro", "computeiro"]
+    palavrasF = ["rola", "vagina", "dilma", "mamata", "puta", "bunda", "computeira"]
 
     cardapio = loadFile("cardapio.txt")
 
