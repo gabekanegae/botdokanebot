@@ -129,7 +129,7 @@ lula: [o|a] {word} do brasil
 lula: o filho [do|da] {word}
 mad max: a estrada [do|da] {word}
 maze runner: [o|a] {word} mortal
-me chame [pelo|pela] [seu|sua] {word} e te chamarei pelo meu
+me chame [pelo|pela] [seu|sua] {word} e te chamarei pel[o|a] [meu|minha]
 mestre dos mares: [o|a] {word} mais distante do mundo
 meu nome não é {word}
 mib: {word}s de preto
