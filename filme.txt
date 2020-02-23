@@ -55,12 +55,13 @@ a era [do|da] {word}
 a fantástica fábrica de {word}
 a lenda [do|da] {word} [perdido|perdida]
 a lista de {word}
+a mão que balança [o|a] {word}
 a pantera cor de {word}
 a pantera {word} de rosa
 a revolução [do|da] {word}
 a teoria [do|da] {word}
 abc [do|da] {word}
-alice [no|na] {word} das maravilhaaltlsialtesnvs {word}
+alice [no|na] {word} das maravilhas {word}
 alice através [do|da] {word}
 alice no mundo [do|da] {word}
 alien, [o|a] [oitavo|oitava] {word}
@@ -91,7 +92,6 @@ diamante de {word}
 diário de [um|uma] {word}
 doctor {word}
 doze homens e [outro|outra] {word}
-duro de {word}
 e [o|a] {word} levou
 edward mãos de {word}
 eliana e [o|a] {word} dos golfinhos
@@ -129,7 +129,7 @@ lula: [o|a] {word} do brasil
 lula: o filho [do|da] {word}
 mad max: a estrada [do|da] {word}
 maze runner: [o|a] {word} mortal
-me chame [pelo|pela] [seu|sua] {word} e te chamarei pel[o|a] [meu|minha]
+me chame [pelo|pela] [seu|sua] {word} e te chamarei [pelo|pela] [meu|minha]
 mestre dos mares: [o|a] {word} mais distante do mundo
 meu nome não é {word}
 mib: {word}s de preto
@@ -239,9 +239,10 @@ xuxa só para {word}s
 {word} de vingança
 {word} e preconceito
 {word} em apuros
-{word} extraordinári[o|a]
+{word} [extraordinário|extraordinária]
 {word} fury
 {word} impossível 3
+{word} [mecânico|mecânica]
 {word} mia: here we go again
 {word} no país das maravilhas
 {word} of tomorrow
