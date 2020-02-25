@@ -2,6 +2,7 @@ help - Mostra informações sobre o bot
 bcc - Cursos de BCC
 bbc - Cursos de BBC
 icmc - Institutos de CMC
+usp - Universidades de SP
 filme - Remakes de filmes
 fwd - Altas merdas
 joegs - É verdade ou não é?
