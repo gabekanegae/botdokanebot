@@ -331,7 +331,7 @@ if __name__ == "__main__":
                         handlers=[logging.FileHandler("bot.log", "a", "UTF-8"), logging.StreamHandler()])
 
     JOEGS_URL = "http://nilc-fakenews.herokuapp.com/ajax/check/"
-    FLIPPER_URL = "http://vemdezapbe.be/api/v1.0/zap/"
+    FLIPPER_URL = "http://vemdezapbebe.herokuapp.com/api/v1.0/zap/"
 
     bccList = loadFile("bcc.txt")
     bbcList = loadFile("bbc.txt")
