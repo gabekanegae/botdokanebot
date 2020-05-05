@@ -13,7 +13,7 @@ def start(update, context):
     logMessageReceived(update, context, logger)
 
     s = "ta rodando ja ue"
-    context.bot.send_message(chat_id=update.effective_chat.id, text=s, parse_mode="Markdown")
+    update.message.reply_text(s, parse_mode="Markdown")
     logMessageSent(update, context, logger, "TXT", s)
 
 def help(update, context):
@@ -27,7 +27,7 @@ def help(update, context):
         ]
 
     s = "".join(h)
-    context.bot.send_message(chat_id=update.effective_chat.id, text=s, parse_mode="Markdown")
+    update.message.reply_text(s, parse_mode="Markdown")
     logMessageSent(update, context, logger, "TXT", s)
 
 def _getRandomFromFile(update, context, file):
@@ -42,7 +42,7 @@ def _getRandomFromFile(update, context, file):
 
     memory[s] = now
 
-    context.bot.send_message(chat_id=update.effective_chat.id, text=s, parse_mode="Markdown")
+    update.message.reply_text(s, parse_mode="Markdown")
     logMessageSent(update, context, logger, "TXT", s)
     logger.info("    --> {} tries | Mem size: {}".format(tries, len(memory)))
 
@@ -71,7 +71,7 @@ def filme(update, context):
 
     memory[s] = now
     
-    context.bot.send_message(chat_id=update.effective_chat.id, text=s, parse_mode="Markdown")
+    update.message.reply_text(s, parse_mode="Markdown")
     logMessageSent(update, context, logger, "TXT", s)
     logger.info("    --> {} tries | Mem size: {}".format(tries, len(memory)))
 
@@ -120,7 +120,7 @@ def joegs(update, context):
         except:
             s = "caraio o joegs fudeu o role, alguem chama ele"
 
-    context.bot.send_message(chat_id=update.effective_chat.id, text=s, parse_mode="Markdown")
+    update.message.reply_text(s, parse_mode="Markdown")
     logMessageSent(update, context, logger, "TXT", s)
 
 def zapzap(update, context):
@@ -162,7 +162,7 @@ def zapzap(update, context):
         except:
             s = "puta merda chama o flipper que deu ruim aqui"
 
-    context.bot.send_message(chat_id=update.effective_chat.id, text=s, parse_mode="Markdown")
+    update.message.reply_text(s, parse_mode="Markdown")
     logMessageSent(update, context, logger, "TXT", s)
 
 def _getRandomFromReddit(update, context, subreddit, user=None):
@@ -247,14 +247,14 @@ def proximo(update, context, option=None):
     if weekday == "Domingo" or (weekday == "Sábado" and mealTime == "🌙 Jantar"):
         s = "*🏫 São Carlos, Área 1 🍽\n{} de {} ({}):*\nFechado"
         s = s.format(mealTime, weekday, day)
-        context.bot.send_message(chat_id=update.effective_chat.id, text=s, parse_mode="Markdown")
+        update.message.reply_text(s, parse_mode="Markdown")
         return
 
     mealKey = "cardapio#" + day + mealTime[2]
     if mealKey in memory:
         s = memory[mealKey]
 
-        context.bot.send_message(chat_id=update.effective_chat.id, text=s, parse_mode="Markdown")
+        update.message.reply_text(s, parse_mode="Markdown")
         return
 
     calories = rd.randint(550, 1350)
@@ -281,7 +281,7 @@ def proximo(update, context, option=None):
     s = s.format(mealTime, weekday, day, salada, carne, veg, mistura, doce, fruta, pao, bebida, calories)
 
     memory[mealKey] = s
-    context.bot.send_message(chat_id=update.effective_chat.id, text=s, parse_mode="Markdown")
+    update.message.reply_text(s, parse_mode="Markdown")
     logMessageSent(update, context, logger, "TXT", s)
 
 def almoco(update, context): proximo(update, context, "almoco")
@@ -290,7 +290,7 @@ def jantar(update, context): proximo(update, context, "jantar")
 def _sendSimpleText(update, context, text):
     logMessageReceived(update, context, logger)
 
-    context.bot.send_message(chat_id=update.effective_chat.id, text=text, parse_mode="Markdown")
+    update.message.reply_text(text, parse_mode="Markdown")
     logMessageSent(update, context, logger, "TXT", s)
 
 def matricula(update, context): _sendSimpleText(update, context, "mais um semestre nao pfv n aguento mais")
