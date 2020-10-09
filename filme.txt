@@ -18,6 +18,7 @@
 [o|a] [sexto|sexta] {word}
 [o|a] [sétimo|sétima] {word}
 [o|a] espetacular {word} aranha
+[o|a] grande {word}
 [o|a] {word} [leão|leoa]
 [o|a] {word} da compadecida
 [o|a] {word} da ópera
@@ -28,20 +29,23 @@
 [o|a] {word} de vidro
 [o|a] {word} de wall street
 [o|a] {word} do futuro
+[o|a] {word} do soldado ryan
 [o|a] {word} dos outros
 [o|a] {word} dos poetas mortos
 [o|a] {word} e a fera
 [o|a] {word} invisível
+[o|a] {word} não se compra
 [o|a] {word} pede carona
 [o|a] {word} polar
-[o|a] {word} que cai
 [o|a] {word} que habito
 [o|a] {word} que sabia demais
+[o|a] {word} é para todos
 [todo|toda] {word} em pânico
 [um|uma] [novo|nova] {word}
 [um|uma] {word} [silencioso|silenciosa]
 [um|uma] {word} brilhante
 [um|uma] {word} da pesada
+[um|uma] {word} de liberdade
 [um|uma] {word} indomável
 [um|uma] {word} muito [louco|louca]
 [um|uma] {word} no museu
@@ -61,7 +65,7 @@ a pantera {word} de rosa
 a revolução [do|da] {word}
 a teoria [do|da] {word}
 abc [do|da] {word}
-alice [no|na] {word} das maravilhas {word}
+alice [no|na] {word} das maravilhas
 alice através [do|da] {word}
 alice no mundo [do|da] {word}
 alien, [o|a] [oitavo|oitava] {word}
@@ -78,13 +82,17 @@ batman: [o|a] {word} das trevas
 batman: o cavaleiro [dos|das] {word}s
 branca de neve e [os|as] sete {word}s
 breaking {word}
+cantando [no|na] {word}s
 cidade de {word}
 clube [do|da] {word}
+como estrelas [no|na] {word}
 como perder [um|uma] {word} em dez dias
 como treinar [o|a] [seu|sua] {word}
-corra que [o|a] {word} vem ai
+como {word} na terra
+corra que [o|a] {word} vem aí
 crônicas de nárnia: [o|a] {word}, a feiticeira e o guarda roupa
 curtindo [o|a] {word} adoidado
+céu e {word}
 de repente {word}
 de volta para [o|a] {word}
 destino de [um|uma] {word}
@@ -104,6 +112,7 @@ eu, [o|a] {word} e as crianças
 fala {word}, mãe!
 forrest gump: o contador de {word}s
 frozen: [um|uma] {word} congelante
+glória [feito|feita] de {word}
 harry potter e [o|a] {word} da fenix
 harry potter e [o|a] {word} de askaban
 harry potter e [o|a] {word} de fogo
@@ -124,6 +133,7 @@ jurassic world: {word} [ameaçado|ameaçada]
 kimi no na {word}
 la casa de {word}
 lady {word}
+los angeles: {word} [proibido|proibida]
 loverboy: {word} de programa
 lula: [o|a] {word} do brasil
 lula: o filho [do|da] {word}
@@ -134,6 +144,7 @@ mestre dos mares: [o|a] {word} mais distante do mundo
 meu nome não é {word}
 mib: {word}s de preto
 mil novecentos e oitenta e {word}
+mil {word}s e oitenta e nove
 minha mãe é [um|uma] {word}
 moana: [um|uma] {word} de aventuras
 mogli o menino {word}
@@ -143,6 +154,7 @@ monty python e a vida de {word}
 monty python e o segredo [do|da] {word}
 mudança de {word}: confusões no convento
 nasce [um|uma] {word}
+o [poderoso|poderosa] {word}
 o brilho eterno de [um|uma] {word} sem lembranças
 o cavaleiro didi e a princesa {word}
 o código [do|da] {word}
@@ -151,6 +163,7 @@ o doador de {word}s
 o estranho mundo de {word}
 o exterminador [do|da] {word}
 o fabuloso destino de {word}
+[o|a] [fabuloso|fabulosa] {word} de amélie poulain
 o guia [do|da] {word} das galáxias
 o hobbit: a batalha [dos|das] 5 {word}s
 o homem [do|da] {word} [alto|alta]
@@ -159,24 +172,29 @@ o massacre [do|da] {word} [elétrico|elétrica]
 o menino [do|da] {word} [listrado|listrada]
 o menino que queria ser {word}
 o mistério [do|da] {word} na parede
-o naltestaltas dos|das] {word}s
+o natal [dos|das] {word}s
 o núcleo [do|da] {word}
 o segredo de [um|uma] {word}
 once upon a {word}
+onde [os|as] {word}s não tem vez
 onde [o|a] {word} não tem vez
 one {word} man
 onze homens e [um|uma] {word}
 onze {word}s e um segredo
+os bons {word}s
 os caçadores [do|da] {word} [perdido|perdida]
+os {word}s companheiros
 para [todos|todas] [os|as] {word}s que já amei
 percy jackson e [o|a] {word} de monstros
 percy jackson: o ladrão de {word}s
 piratas [do|da] {word} de silício
 piratas do caribe: navegando em {word}s [misteriosos|misteriosas]
 planeta [dos|das] {word}s
+por [uns|umas] {word}s a mais
 por um punhado de {word}
 procurando {word}
 quando você viu [seu|sua] {word} pela ultima vez?
+quanto mais {word} melhor
 quatro amigas e [um|uma] {word} viajante
 quem vai ficar com [o|a] {word}
 querida, encolhi [o|a] {word}!
@@ -190,6 +208,9 @@ senhor dos anéis: [os|as] [dois|duas] {word}s
 senhor dos anéis: a sociedade [do|da] {word}
 senhor dos anéis: o retorno [do|da] {word}
 sete anos [no|na] {word}
+seven: os sete {word}s capitais
+snatch: porcos e {word}s
+snatch: {word}s e diamantes
 sociedade [dos|das] {word}s [mortos|mortas]
 sonhos de [um|uma] {word} de verão
 star wars: [os|as] [últimos|últimas] {word}s
@@ -208,17 +229,21 @@ todo mundo odeia [o|a] {word}
 top gun: {word}s indomáveis
 trocando [os|as] {word}s
 três anúncios para [um|uma] {word}
+três {word}s em conflito
 turma [do|da] {word}: laços
 turma da mônica: {word}s
+túmulo [dos|das] {word}s
 um é pouco, {word} é bom, três é demais
 uma odisseia [no|na] {word}
 up: [altos|altas] {word}s
 velozes e furiosos: desafio em {word}
 viagem ao centro [do|da] {word}
+vingadores: [o|a] {word} [infinito|infinita]
 vingadores: a era de {word}
 vingadores: {word} [infinito|infinita]
 viva: a vida é [um|uma] {word}
 volta ao mundo em 80 {word}s
+whiplash: em busca [do|da] {word}
 whose {word} is it anyway
 wifi ralph: quebrando [o|a] {word}
 xuxa e [os|as] {word}s
@@ -226,6 +251,9 @@ xuxa só para {word}s
 {word} [adormecido|adormecida]
 {word} [aventureiro|aventureira]
 {word} [estranho|estranha]
+{word} [extraordinário|extraordinária]
+{word} [indiscreto|indiscreta]
+{word} [mecânico|mecânica]
 {word} [negro|negra]
 {word} abaixo de zero
 {word} através do espelho
@@ -237,19 +265,22 @@ xuxa só para {word}s
 {word} de mentirinha
 {word} de mestre
 {word} de vingança
+{word} do paraíso
+{word} dos vagalumes
+{word} e inferno
 {word} e preconceito
 {word} em apuros
-{word} [extraordinário|extraordinária]
 {word} fury
 {word} impossível 3
-{word} [mecânico|mecânica]
 {word} mia: here we go again
 {word} no país das maravilhas
+{word} now
 {word} of tomorrow
 {word} paranormal
 {word} poppins
 {word} pra sempre
 {word} sobre rodas
+{word} só para baixinhos
 {word} valente
 {word} vs superman
 {word} wars
@@ -257,6 +288,8 @@ xuxa só para {word}s
 {word}: altas aventuras
 {word}s [fantásticos|fantásticas] e onde habitam
 {word}s [modernos|modernas]
+{word}s da cidade
+{word}s de aluguel
 {word}s do caribe
 {word}s vorazes
 à espera de [um|uma] {word}
