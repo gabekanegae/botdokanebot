@@ -1,6 +1,7 @@
 help - Mostra informações sobre o bot
 bcc - Cursos de BCC
 bbc - Cursos de BBC
+becd - Cursos de BECD
 icmc - Institutos de CMC
 usp - Universidades de SP
 filme - Remakes de filmes
