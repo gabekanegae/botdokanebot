@@ -212,6 +212,13 @@ def bandeco(update, context):
 def toschi(update, context):
     logMessageReceived(update, context, logger)
 
+    m = int(strftime("%m", gmtime(time()-3*60*60)))
+    if m <= 6:
+        s = "po ta cedo ainda deixa os bixo vir kdkd"
+        update.message.reply_text(s, parse_mode="Markdown")
+        logMessageSent(update, context, logger, "TXT", s)
+        return
+
     context.bot.forwardMessage(update.effective_chat.id, "@ofwdnovo", 362)
     logMessageSent(update, context, logger, "FWD", "362", origID=362, origChannel="@ofwdnovo")
 
