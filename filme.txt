@@ -82,7 +82,7 @@ batman: [o|a] {word} das trevas
 batman: o cavaleiro [dos|das] {word}s
 branca de neve e [os|as] sete {word}s
 breaking {word}
-cantando [no|na] {word}s
+cantando [no|na] {word}
 cidade de {word}
 clube [do|da] {word}
 como estrelas [no|na] {word}

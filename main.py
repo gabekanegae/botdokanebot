@@ -349,8 +349,8 @@ if __name__ == "__main__":
     becdList = loadFile("becd.txt")
 
     filmeList = loadFile("filme.txt")
-    palavrasM = ["cu", "pinto", "pipi", "caralho", "biroliro", "computeiro"]
-    palavrasF = ["rola", "vagina", "dilma", "mamata", "puta", "bunda", "computeira"]
+    palavrasM = ["cu", "pinto", "caralho"]
+    palavrasF = ["bunda"]
 
     cardapio = loadFile("cardapio.txt")
 
