@@ -299,9 +299,10 @@ def _sendSimpleText(update, context, text):
     logMessageReceived(update, context, logger)
 
     update.message.reply_text(text, parse_mode="Markdown")
-    logMessageSent(update, context, logger, "TXT", s)
+    logMessageSent(update, context, logger, "TXT", text)
 
-def matricula(update, context): _sendSimpleText(update, context, "mais um semestre nao pfv n aguento mais")
+def matricula(update, context):
+    _sendSimpleText(update, context, "mais um semestre nao pfv n aguento mais")
 
 def main():
     updater = Updater(token=TOKEN, use_context=True)
