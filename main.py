@@ -363,7 +363,7 @@ if __name__ == "__main__":
     moodSick = set(["sick", "doente"] + list(emojiSick))
 
     MEMORY_TIMEOUT = 5*60 # Doesn't repeat messages shown within the last X seconds
-    MAX_FWD_ID = 600 # FWD channel has less than X messages
+    MAX_FWD_ID = 1500 # FWD channel has less than X messages
     MAX_TRIES = 100 # Will try showing an unique message X times before giving up
     
     reddit = praw.Reddit(client_id=auth.REDDIT_CID,
