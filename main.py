@@ -195,19 +195,14 @@ def programmerhumor(update, context): _getRandomFromReddit(update, context, "pro
 def bandeco(update, context):
     logMessageReceived(update, context, logger)
 
-    r = rd.randint(0, 1)
-    if r == 0:
-        context.bot.forwardMessage(update.effective_chat.id, "@ofwdnovo", 301)
-        logMessageSent(update, context, logger, "FWD", "301", origID=301, origChannel="@ofwdnovo")
+    combos = [(301, 302), (326, 327), (843, 844)]
+    pick = rd.choice(combos)
 
-        context.bot.forwardMessage(update.effective_chat.id, "@ofwdnovo", 302)
-        logMessageSent(update, context, logger, "FWD", "302", origID=302, origChannel="@ofwdnovo")
-    else:
-        context.bot.forwardMessage(update.effective_chat.id, "@ofwdnovo", 326)
-        logMessageSent(update, context, logger, "FWD", "326", origID=326, origChannel="@ofwdnovo")
+    context.bot.forwardMessage(update.effective_chat.id, "@ofwdnovo", pick[0])
+    logMessageSent(update, context, logger, "FWD", str(pick[0]), origID=pick[0], origChannel="@ofwdnovo")
 
-        context.bot.forwardMessage(update.effective_chat.id, "@ofwdnovo", 327)
-        logMessageSent(update, context, logger, "FWD", "327", origID=327, origChannel="@ofwdnovo")
+    context.bot.forwardMessage(update.effective_chat.id, "@ofwdnovo", pick[1])
+    logMessageSent(update, context, logger, "FWD", str(pick[1]), origID=pick[1], origChannel="@ofwdnovo")
 
 def toschi(update, context):
     logMessageReceived(update, context, logger)
@@ -368,7 +363,7 @@ if __name__ == "__main__":
     moodSick = set(["sick", "doente"] + list(emojiSick))
 
     MEMORY_TIMEOUT = 5*60 # Doesn't repeat messages shown within the last X seconds
-    MAX_FWD_ID = 600 # FWD channel has less than X messages
+    MAX_FWD_ID = 1500 # FWD channel has less than X messages
     MAX_TRIES = 100 # Will try showing an unique message X times before giving up
     
     reddit = praw.Reddit(client_id=auth.REDDIT_CID,
