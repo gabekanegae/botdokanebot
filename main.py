@@ -51,6 +51,7 @@ def bbc(update, context): _getRandomFromFile(update, context, bbcList)
 def icmc(update, context): _getRandomFromFile(update, context, icmcList)
 def usp(update, context): _getRandomFromFile(update, context, uspList)
 def becd(update, context): _getRandomFromFile(update, context, becdList)
+def bsi(update, context): _getRandomFromFile(update, context, bsiList)
 
 def filme(update, context):
     logMessageReceived(update, context, logger)
@@ -309,6 +310,7 @@ def main():
     dp.add_handler(CommandHandler("bcc", bcc))
     dp.add_handler(CommandHandler("bbc", bbc))
     dp.add_handler(CommandHandler("becd", becd))
+    dp.add_handler(CommandHandler("bsi", bsi))
     dp.add_handler(CommandHandler("icmc", icmc))
     dp.add_handler(CommandHandler("usp", usp))
     dp.add_handler(CommandHandler("fwd", fwd))
@@ -343,6 +345,7 @@ if __name__ == "__main__":
     icmcList = loadFile("icmc.txt")
     uspList = loadFile("usp.txt")
     becdList = loadFile("becd.txt")
+    bsiList = loadFile("bsi.txt")
 
     filmeList = loadFile("filme.txt")
     palavrasM = ["cu", "pinto", "caralho"]
