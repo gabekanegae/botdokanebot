@@ -23,7 +23,7 @@ def help(update, context):
         "pra ver os comando digita / no chat e ve qq aparece ali\n",
         "\n",
         "vamo ajuda a faze o bot kkkkk\n",
-        "https://github.com/gabekanegae/botdokanebot/\n"
+        "https://github.com/gabekanegae/botdakanebot/\n"
         ]
 
     s = "".join(h)
